@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9d04894a-9a58-4dfa-9362-851e5da570bd" name="Changes" comment="" />
+=======
+    <list default="true" id="9d04894a-9a58-4dfa-9362-851e5da570bd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/ClothingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/ClothingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/WordFrequency.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/ClothingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/ClothingPage.class" afterDir="false" />
+    </list>
+>>>>>>> b57b92c (Initial commit)
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +29,12 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+>>>>>>> b57b92c (Initial commit)
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -29,6 +46,10 @@
     </option>
   </component>
   <component name="ProjectId" id="2IybvwTKgHJGIqGj8XzlsSCZ2Ow" />
+<<<<<<< HEAD
+=======
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> b57b92c (Initial commit)
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,4 +87,18 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+>>>>>>> b57b92c (Initial commit)
 </project>

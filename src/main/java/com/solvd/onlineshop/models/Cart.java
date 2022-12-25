@@ -40,7 +40,11 @@ public class Cart implements AddtoCart {
         System.out.println("\n------Cart------");
         String result = "";
         for(Product product : productInCart) {
+<<<<<<< HEAD
             result = result + product.toString() + "\n";
+=======
+            result = result + product.toString() + "\n\n";
+>>>>>>> b57b92c (Initial commit)
         }
         result = result + "\nTotal: $" + this.getCartTotal();
         System.out.println(result);
@@ -60,13 +64,21 @@ public class Cart implements AddtoCart {
                      or do you want me to throw a custom made exception AND catch it
                      throw Exception(e);
                     */
+<<<<<<< HEAD
                     if( removeFromCart(productID) ) {
+=======
+                    if (removeFromCart(productID)) {
+>>>>>>> b57b92c (Initial commit)
                         return 1;
                     } else {
                         System.out.println("Could not find item with product id: " + productID);
                         System.out.println("Please try again.");
                     }
+<<<<<<< HEAD
                 }catch(Exception e) {
+=======
+                } catch (NumberFormatException e) {
+>>>>>>> b57b92c (Initial commit)
                     System.out.println("Please try again with a valid input");
                 }
 

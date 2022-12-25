@@ -106,8 +106,8 @@ public class ClothingPage extends Page {
 
 
             Shirt shirt = new Shirt(Shirt.PRICE, materialChoice,colorChoice,brandChoice,sizeChoice,bSleeveChoice);
-            System.out.println("Do you want to add to cart? Yes or No to go back to main page:");
             System.out.println(shirt);
+            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart( shirt );
