@@ -68,7 +68,7 @@ public class ClothingPage extends Page {
                     bPocketChoice,
                     bZipperChoice);
             System.out.println(jacket);
-            System.out.println("Do you want to add to cart? Yes or No to go back to main page:");
+            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart( jacket );
@@ -115,45 +115,42 @@ public class ClothingPage extends Page {
             }
             // TODO throw invalid entry exception
         }
-//
-//        if (choice.equals("Pants")) {
-//            System.out.print("Sizes:");
-//            System.out.println(Arrays.toString(Pants.SIZES));
-//            String sizeChoice = chooseClothingParams(sc, Pants.SIZES, "sizes");
-//
-//
-//            System.out.print("Color:");
-//            System.out.println(Arrays.toString(Pants.COLORS));
-//            String colorChoice = chooseClothingParams(sc, Pants.COLORS, "colors");
-//
-//
-//            System.out.println("Enter waist-size:");
-//            System.out.println(Arrays.toString(Pants.WAISTSIZE));
-//            String waistSize = chooseClothingParams(sc,Pants.WAISTSIZE, "waist-size");
-//
-//            System.out.println("Do you want zip-up?:");
-//            System.out.println(Arrays.toString(Pants.MATERIAL));
-//            String materialChoice = chooseClothingParams(sc,Pants.MATERIAL, "Fabric Material");
-//
-//
-//            System.out.println("Enter your waist-size:");
-//            Integer waistSize;
-////            String stripesChoice;
-////            String[] zipOptions = {"Yes", "No"};
-////            boolean stripeChoice;
-////            stripesChoice = chooseClothingParams(sc, zipOptions, "Zip-Up (Yes or No)");
-////            stripeChoice = convertChoiceToBool(stripesChoice);
-//
-//            Pants pants = new Pants(3, Pants.PRICE, colorChoice, sizeChoice, materialChoice, waistSize);
-//            System.out.println("Do you want to add to cart? Yes or No to go back to main page:");
-//            System.out.println(pants);
-//            String addToCartChoice = sc.next();
-//            if (addToCartChoice.equals("Yes")) {
-//                cart.addCart( pants );
-//                return 1;
-//            }
-//            // TODO throw invalid entry exception
-//        }
+
+        if (choice.equals("Pants")) {
+            System.out.print("Sizes:");
+            System.out.println(Arrays.toString(Pants.BOTTOMSWAISTSIZE));
+            String[] sizes = new String[Pants.BOTTOMSWAISTSIZE.length];
+            for (int i = 0; i < Pants.BOTTOMSWAISTSIZE.length; i++) {
+                sizes[i] = Integer.toString(Pants.BOTTOMSWAISTSIZE[i]);
+            }
+            String sizeChoice = chooseClothingParams(sc, sizes, "sizes");
+            int size = convertChoiceToInt(sizeChoice);
+
+
+            System.out.print("Color:");
+            System.out.println(Arrays.toString(Pants.COLORS));
+            String colorChoice = chooseClothingParams(sc, Pants.COLORS, "colors");
+
+            System.out.print("Brand:");
+            System.out.println(Arrays.toString(Pants.BRANDS));
+            String brandChoice = chooseClothingParams(sc, Pants.BRANDS, "brand");
+
+
+            System.out.println("Type preferred material:");
+            System.out.println(Arrays.toString(Pants.MATERIAL));
+            String materialChoice = chooseClothingParams(sc,Pants.MATERIAL, "Material");
+
+
+            Pants pants = new Pants(Pants.PRICE,materialChoice,colorChoice,brandChoice,size);
+            System.out.println(pants);
+            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
+            String addToCartChoice = sc.next();
+            if (addToCartChoice.equals("Yes")) {
+                cart.addCart( pants );
+                return 1;
+            }
+            // TODO throw invalid entry exception
+        }
         return 0;
     }
 
@@ -183,6 +180,29 @@ public class ClothingPage extends Page {
         }
         return choice;
     }
+
+    @Override
+    public int convertChoiceToInt(String choice) {
+        int size = 0;
+        try {
+            // Try to parse the choice string as an integer
+            size = Integer.parseInt(choice);
+        } catch (NumberFormatException e) {
+            // If the choice string is not an integer, handle the error
+            System.out.println("Invalid input. Please enter a valid integer size.");
+        }
+
+        // Check if the size is in the BOTTOMSWAISTSIZE array
+        for (int i = 0; i < Pants.BOTTOMSWAISTSIZE.length; i++) {
+            if (size == Pants.BOTTOMSWAISTSIZE[i]) {
+                return size;
+            }
+        }
+
+        // If the size is not in the BOTTOMSWAISTSIZE array, return 0
+        return 0;
+    }
+
 
     @Override
     public int ShowPage() {

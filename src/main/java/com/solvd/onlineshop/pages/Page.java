@@ -11,7 +11,9 @@ public abstract class Page implements PageDisplay {
     protected abstract boolean convertChoiceToBool(String choice);
 
     public abstract String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype);
+
+    public abstract int convertChoiceToInt(String choice);
 }
 
-
+// return Integer.parseInt(choice);
 

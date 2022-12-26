@@ -7,14 +7,19 @@ public class Pants extends Clothing {
 
     //Constants
     //position 0,1,2 represents choices
+    public static final String[] BRANDS = new String[]{"Levis","J-Crew","Louie"};
     public static final String[] COLORS = new String[]{"Tan", "Navy", "Black"};
     public static final int PRICE = 20;
     public static final String[] MATERIAL = {"Khaki", "Jean", "Cotton"};
 
 
     //constructor
-    public Pants(int productPrice, String material, String color, String brand, String size, int waistSize) {
-        super(productPrice, material, color, brand, size);
+    public Pants(int productPrice,
+                 String material,
+                 String color,
+                 String brand,
+                 int waistSize) {
+        super(productPrice, material, color, brand, String.valueOf(waistSize));
         this.material = material;
         this.waistSize = waistSize;
     }
@@ -38,7 +43,7 @@ public class Pants extends Clothing {
 
     @Override
     public String toString() {
-        return super.toString() + ", fabric material: " + getMaterial() + ", waist-size: " + this.getWaistSize();
+        return "Pants" + super.toString() + "\n Material: " + getMaterial();
     }
 
 }

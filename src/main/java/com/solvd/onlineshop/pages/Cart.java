@@ -1,6 +1,7 @@
-package com.solvd.onlineshop.models;
+package com.solvd.onlineshop.pages;
 
 import com.solvd.onlineshop.interfaces.AddtoCart;
+import com.solvd.onlineshop.models.Product;
 
 import java.util.ArrayList;
 import java.util.Scanner;

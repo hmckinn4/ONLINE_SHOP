@@ -49,7 +49,7 @@ public class Jacket extends Clothing {
     }
 
     @Override
-    public String toString() {return super.toString() + "\n Has Pockets: " + getHasPockets() + "\n Has Zippers: " + getHasZippers(); }
+    public String toString() {return "Jacket" + "\n" + super.toString() + "\n Has Pockets: " + getHasPockets() + "\n Has Zippers: " + getHasZippers(); }
 
     @Override
     public int hashCode() {

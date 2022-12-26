@@ -24,7 +24,7 @@ public class FurniturePage extends Page {
                 "Example: Jackets" + "\n" +
                 "Couch: $" + Couch.PRICE + "\n" +
                 "Chair: $" + Chair.PRICE + "\n" +
-                "Table: $" + Pants.PRICE + "\n");
+                "Table: $" + Table.PRICE + "\n");
         String choice = sc.next();
 
         if (choice.equals("Couch")) {
@@ -50,8 +50,8 @@ public class FurniturePage extends Page {
 
 
             Couch couch = new Couch(Couch.PRICE,materialchoice,colorChoice,brandChoice,bcupHolderChoice);
-            System.out.println("Do you want to add to cart? Yes or No to go back to main page:");
             System.out.println(couch);
+            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(couch);
@@ -88,14 +88,44 @@ public class FurniturePage extends Page {
             bReclineChoice = convertChoiceToBool(reclineChoice);
 
 
-
-
             Chair chair = new Chair(Chair.PRICE,materialchoice,colorChoice,brandChoice,bcupHolderChoice,bReclineChoice);
-            System.out.println("Do you want to add to cart? Yes or No to go back to main page:");
             System.out.println(chair);
+            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(chair);
+                return 1;
+            }
+            // TODO throw invalid entry exception
+        }
+        if (choice.equals("Table")) {
+
+            System.out.print("Color:");
+            System.out.println(Arrays.toString(Table.COLORS));
+            String colorChoice = chooseClothingParams(sc, Table.COLORS, "colors");
+
+            System.out.print("Material:");
+            System.out.println(Arrays.toString(Furniture.MATERIAL));
+            String materialchoice = chooseClothingParams(sc, Furniture.MATERIAL, "material");
+
+            System.out.print("Brand:");
+            System.out.println(Arrays.toString(Furniture.BRAND));
+            String brandChoice = chooseClothingParams(sc, Furniture.BRAND, "material");
+
+            System.out.println("Do you want cup holders?:");
+            String cupHolderChoice;
+            String[] cupHolderOptions = {"Yes", "No"};
+            boolean bcupHolderChoice;
+            cupHolderChoice = chooseClothingParams(sc, cupHolderOptions, " Cup holders? (Yes or No)");
+            bcupHolderChoice = convertChoiceToBool(cupHolderChoice);
+
+
+            Table table = new Table(Chair.PRICE,materialchoice,colorChoice,brandChoice,bcupHolderChoice);
+            System.out.println(table);
+            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
+            String addToCartChoice = sc.next();
+            if (addToCartChoice.equals("Yes")) {
+                cart.addCart(table);
                 return 1;
             }
             // TODO throw invalid entry exception
@@ -128,6 +158,11 @@ public class FurniturePage extends Page {
             }
             return choice;
         }
+
+    @Override
+    public int convertChoiceToInt(String choice) {
+        return 0;
+    }
 
     @Override
     public int ShowPage() {
