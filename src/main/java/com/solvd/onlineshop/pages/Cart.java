@@ -1,18 +1,22 @@
 package com.solvd.onlineshop.pages;
 
 import com.solvd.onlineshop.interfaces.AddtoCart;
+import com.solvd.onlineshop.interfaces.CheckOut;
+import com.solvd.onlineshop.interfaces.RemoveFromCart;
 import com.solvd.onlineshop.models.Product;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Cart implements AddtoCart {
+public class Cart implements AddtoCart, RemoveFromCart, CheckOut {
     public ArrayList<Product> productInCart = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
+    @Override
     public void addCart(Product toAddToCart) {
         productInCart.add( toAddToCart );
     }
 
+    @Override
     public boolean removeFromCart(int productID) {
         for( Product currentProduct : productInCart ) {
             if (currentProduct.getID() == productID) {
@@ -37,7 +41,7 @@ public class Cart implements AddtoCart {
         return productInCart;
     }
 
-    public int showPage() {
+    public int showCart() {
         System.out.println("\n------Cart------");
         String result = "";
         for(Product product : productInCart) {
@@ -82,15 +86,22 @@ public class Cart implements AddtoCart {
 >>>>>>> b57b92c (Initial commit)
                     System.out.println("Please try again with a valid input");
                 }
-
-
             }
         }
-        //TODO handle more input exceptions
     }
 
     @Override
-    public void addCart() {
-        System.out.println("Item added!!");
+    public double checkOut(Cart cart, double payment) {
+        double totalPrice = cart.getCartTotal();
+        System.out.println("Enter payment amount \n :$");
+        payment = sc.nextDouble();
+        if (payment < totalPrice) {
+            System.out.println("Error: Insufficient payment");
+            return 4;
+        }else
+        System.out.println("Thank you for your purchase!");
+        double change = payment - totalPrice;
+        System.out.println("Your change: $" + change);
+        return change;
     }
 }

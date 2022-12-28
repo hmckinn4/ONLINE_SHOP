@@ -15,7 +15,7 @@ public class WordFrequency {
         Map<String, Integer> wordFrequency = new HashMap<>();
 
         // Read the file
-        try (BufferedReader reader = new BufferedReader(new FileReader("file.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("FedExEarnings.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 // Split the line into words

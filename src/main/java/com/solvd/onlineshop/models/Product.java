@@ -1,12 +1,9 @@
 package com.solvd.onlineshop.models;
 
 
-import com.solvd.onlineshop.interfaces.AssignHashcode;
 import com.solvd.onlineshop.interfaces.IDisplay;
 
-import java.util.Objects;
-
-abstract public class Product implements IDisplay, AssignHashcode {
+abstract public class Product implements IDisplay {
     public int productID;
     public int price;
     public String material;

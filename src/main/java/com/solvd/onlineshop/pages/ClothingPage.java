@@ -1,11 +1,12 @@
 package com.solvd.onlineshop.pages;
 
+import com.solvd.onlineshop.interfaces.PageDisplay;
 import com.solvd.onlineshop.models.*;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ClothingPage extends Page {
+public class ClothingPage extends Page implements PageDisplay {
 
     //need convert user choice of parameters to ID;
     // convert from jacket
@@ -203,7 +204,6 @@ public class ClothingPage extends Page {
         return 0;
     }
 
-
     @Override
     public int ShowPage() {
         return 0;
@@ -218,6 +218,22 @@ public class ClothingPage extends Page {
     public String chooseClothingParams() {
         return null;
     }
+
+
+//    @Override
+//    public int ShowPage() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public boolean convertChoiceToBool() {
+//        return false;
+//    }
+//
+//    @Override
+//    public String chooseClothingParams() {
+//        return null;
+//    }
 }
 
 //   public Jacket generateJacket(int size, int color){

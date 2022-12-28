@@ -1,5 +1,8 @@
 package com.solvd.onlineshop.interfaces;
 
+import com.solvd.onlineshop.models.Product;
+
 public interface AddtoCart {
-    public void addCart();
+    void addCart(Product toAddToCart);
+
 }

@@ -1,8 +1,6 @@
 package com.solvd.onlineshop.models;
 
-import com.solvd.onlineshop.interfaces.AssignHashcode;
-
-public abstract class Clothing extends Product implements AssignHashcode {
+public abstract class Clothing extends Product {
     //Product fields
     public String size;
 
