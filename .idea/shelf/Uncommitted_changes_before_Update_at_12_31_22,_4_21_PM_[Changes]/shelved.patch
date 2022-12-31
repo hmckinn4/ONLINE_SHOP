@@ -1,0 +1,15 @@
+Index: src/main/java/com/solvd/onlineshop/models/Sizes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/solvd/onlineshop/models/Sizes.java b/src/main/java/com/solvd/onlineshop/models/Sizes.java
+new file mode 100644
+--- /dev/null	(date 1672521708289)
++++ b/src/main/java/com/solvd/onlineshop/models/Sizes.java	(date 1672521708289)
+@@ -0,0 +1,5 @@
++package com.solvd.onlineshop.models;
++
++public enum Sizes {
++    
++}
