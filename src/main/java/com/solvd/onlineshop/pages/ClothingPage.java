@@ -1,7 +1,10 @@
 package com.solvd.onlineshop.pages;
 
 import com.solvd.onlineshop.interfaces.PageDisplay;
-import com.solvd.onlineshop.models.*;
+import com.solvd.onlineshop.models.Clothing;
+import com.solvd.onlineshop.models.Jacket;
+import com.solvd.onlineshop.models.Pants;
+import com.solvd.onlineshop.models.Shirt;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -17,6 +20,7 @@ public class ClothingPage extends Page implements PageDisplay {
     public ClothingPage(Cart cart) {
         this.cart = cart;
     }
+
     @Override
     public int showPage(Scanner sc) {
 
@@ -72,7 +76,7 @@ public class ClothingPage extends Page implements PageDisplay {
             System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
-                cart.addCart( jacket );
+                cart.addCart(jacket);
                 return 1;
             }
 
@@ -106,12 +110,12 @@ public class ClothingPage extends Page implements PageDisplay {
             bSleeveChoice = convertChoiceToBool(sleeveChoice);
 
 
-            Shirt shirt = new Shirt(Shirt.PRICE, materialChoice,colorChoice,brandChoice,sizeChoice,bSleeveChoice);
+            Shirt shirt = new Shirt(Shirt.PRICE, materialChoice, colorChoice, brandChoice, sizeChoice, bSleeveChoice);
             System.out.println(shirt);
             System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
-                cart.addCart( shirt );
+                cart.addCart(shirt);
                 return 1;
             }
             // TODO throw invalid entry exception
@@ -139,15 +143,15 @@ public class ClothingPage extends Page implements PageDisplay {
 
             System.out.println("Type preferred material:");
             System.out.println(Arrays.toString(Pants.MATERIAL));
-            String materialChoice = chooseClothingParams(sc,Pants.MATERIAL, "Material");
+            String materialChoice = chooseClothingParams(sc, Pants.MATERIAL, "Material");
 
 
-            Pants pants = new Pants(Pants.PRICE,materialChoice,colorChoice,brandChoice,size);
+            Pants pants = new Pants(Pants.PRICE, materialChoice, colorChoice, brandChoice, size);
             System.out.println(pants);
             System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
-                cart.addCart( pants );
+                cart.addCart(pants);
                 return 1;
             }
             // TODO throw invalid entry exception
@@ -156,31 +160,55 @@ public class ClothingPage extends Page implements PageDisplay {
     }
 
     @Override
-    protected boolean convertChoiceToBool(String choice) {
-        if(choice.equals("Yes")){
+    protected boolean convertChoiceToBool(String choice) throws NullPointerException {
+        if (choice == null) {
+            throw new NullPointerException("Choice is null");
+        }
+        if (choice.equals("Yes")) {
             return true;
         } else {
             return false;
         }
     }
 
+
     @Override
     public String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype) {
-        boolean isValid = false;
-        String choice = null;
-        while (!isValid) {
-            System.out.println("Enter preferred parameter of" + choicetype + ":");
-            choice = sc.next();
-            for (String param : validOptions) {
-                if (choice.equals(param))
-                    isValid = true;
+        boolean returnToMainMenu = false;
+        while (returnToMainMenu == false) {
+            boolean isValid = false;
+            String choice = null;
+            while (!isValid) {
+                System.out.println("\nEnter preferred parameter of " + choicetype + "\n" + "Enter Homepage to return to Main Menu");
+                choice = sc.next();
+                if (choice.equals("Homepage")) {
+                    // Set returnToMainMenu to true to break out of the loop
+                    returnToMainMenu = true;
+                    // Break out of the inner loop
+                    break;
+                }
+                // Check if the choice is a valid option
+                for (String param : validOptions) {
+                    if (choice.equals(param)) {
+                        isValid = true;
+                        break;
+                    }
+                }
+                if (isValid == false) {
+                    logger.warning("Please Input Valid Entry");
+                }
             }
-            if (isValid == false) {
-                System.out.println("Please Input Valid Entry");
+            // Return the user's choice if it is a valid option and they did not enter 0 to return to the main menu
+            if (returnToMainMenu == false) {
+                return choice;
             }
         }
-        return choice;
+        // Return null if the user entered 0 to return to the main menu
+        return null;
     }
+
+
+
 
     @Override
     public int convertChoiceToInt(String choice) {
@@ -190,7 +218,7 @@ public class ClothingPage extends Page implements PageDisplay {
             size = Integer.parseInt(choice);
         } catch (NumberFormatException e) {
             // If the choice string is not an integer, handle the error
-            System.out.println("Invalid input. Please enter a valid integer size.");
+            logger.warning(" Please enter a valid integer size.");
         }
 
         // Check if the size is in the BOTTOMSWAISTSIZE array
@@ -218,28 +246,8 @@ public class ClothingPage extends Page implements PageDisplay {
     public String chooseClothingParams() {
         return null;
     }
-
-
-//    @Override
-//    public int ShowPage() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public boolean convertChoiceToBool() {
-//        return false;
-//    }
-//
-//    @Override
-//    public String chooseClothingParams() {
-//        return null;
-//    }
 }
 
-//   public Jacket generateJacket(int size, int color){
-//       //pass needed options
-//
-//        }
 
 
 

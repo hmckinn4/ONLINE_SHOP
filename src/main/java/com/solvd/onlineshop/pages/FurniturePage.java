@@ -146,14 +146,15 @@ public class FurniturePage extends Page {
             boolean isValid = false;
             String choice = null;
             while (!isValid) {
-                System.out.println("Enter preferred parameter of" + choicetype + ":");
+                System.out.println("Enter preferred parameter of " + choicetype + ":");
                 choice = sc.next();
+               // choice = upperCase.apply(choice);
                 for (String param : validOptions) {
                     if (choice.equals(param))
                         isValid = true;
                 }
                 if (isValid == false) {
-                    System.out.println("Please Input Valid Entry");
+                    logger.warning("Please Input Valid Entry");
                 }
             }
             return choice;

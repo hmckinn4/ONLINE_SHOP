@@ -1,10 +1,16 @@
 package com.solvd.onlineshop.models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public abstract class Clothing extends Product {
     //Product fields
     public String size;
 
     public static final String [] TOPSIZES = new String[] {"S","M","L"};
+
+    public List<String> topsizesList = new ArrayList<>(Arrays.asList("S","M","L"));
     //position 0,1,2 represents choices
     public static final String [] TOPCOLORS = new String[] {"Red","Blue","Green"};
 
@@ -35,4 +41,6 @@ public abstract class Clothing extends Product {
     public int hashCode() {
         return super.hashCode();
     }
+
+
 }

@@ -5,19 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04894a-9a58-4dfa-9362-851e5da570bd" name="Changes" comment="More Additions&#10;&#10;Remove from cart&#10;Check out&#10;Interfaces^^">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/Enums/Size.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/exceptions/NullPointerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/functionalinterfaces/FirstFunctionalInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Sizes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/exceptions/Exception2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/exceptions/Exception2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Clothing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Clothing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Pants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Pants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/ClothingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/ClothingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/FurniturePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/FurniturePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/exceptions/Exception2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/exceptions/Exception2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Clothing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Clothing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Pants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Pants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/ClothingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/ClothingPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/FurniturePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/FurniturePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/Page.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,18 +66,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;OverrideImplement.combined&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/henrymckinney/Java/OnlineStroreSimulation5/OnlineShop/src/main/java/com/solvd/onlineshop&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "OverrideImplement.combined": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/henrymckinney/Java/OnlineStroreSimulation5/OnlineShop/src/main/java/com/solvd/onlineshop",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop" />
@@ -72,7 +98,7 @@
       <module name="my-onlineshop" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.solvd.onlineshop.interfaces.*" />
+          <option name="PATTERN" value="com.solvd.onlineshop.functionalinterfaces.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -163,15 +189,6 @@
           <properties class="java.util.InputMismatchException" package="java.util" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/FurniturePage.java</url>
-          <line>20</line>
-          <properties class="com.solvd.onlineshop.pages.FurniturePage">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="java-exception" />

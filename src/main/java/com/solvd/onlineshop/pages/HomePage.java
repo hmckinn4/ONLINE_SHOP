@@ -1,11 +1,9 @@
 package com.solvd.onlineshop.pages;
 
-import com.solvd.onlineshop.Main;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static com.solvd.onlineshop.Main.username;
+import static com.solvd.onlineshop.pages.Page.logger;
 
 public class HomePage {
 
@@ -17,8 +15,7 @@ public class HomePage {
                 + "1. View Cart \n"
                 + "2. View Clothing Selection \n"
                 + "3. View Furniture Selection \n"
-                + "4. View Electronics Selection \n"
-                + "5. \n"
+                + "4. Checkout \n"
                 + "-1. Exit the program ";
         System.out.println(options);
 
@@ -35,7 +32,7 @@ public class HomePage {
                 }
             } catch (InputMismatchException e) {
 
-                System.out.println("Invalid input. Please enter a valid integer."
+                logger.warning("Invalid input. Please enter a valid integer."
                         +
 
                         "\n\nStore System Menu \n"
@@ -43,19 +40,17 @@ public class HomePage {
                         + "1. View Cart \n"
                         + "2. View Clothing Selection \n"
                         + "3. View Furniture Selection \n"
-                        + "4. View Electronics Selection \n"
-                        + "5. \n"
+                        + "4. Checkout \n"
                         + "-1. Exit the program ");
                 sc.next(); // consume the invalid input
             } catch (Exception e) {
-                System.out.println("Invalid input. Please enter an integer between -1 and 5." +
+                logger.warning("Invalid input. Please enter an integer between -1 and 5." +
                         "\n\nStore System Menu \n"
                         + "0. Return to Homepage \n"
                         + "1. View Cart \n"
                         + "2. View Clothing Selection \n"
                         + "3. View Furniture Selection \n"
-                        + "4. View Electronics Selection \n"
-                        + "5. \n"
+                        + "4. Checkout \n"
                         + "-1. Exit the program ");
                 sc.next(); // consume the invalid input
             }

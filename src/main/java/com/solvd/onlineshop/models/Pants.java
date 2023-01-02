@@ -1,5 +1,9 @@
 package com.solvd.onlineshop.models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Pants extends Clothing {
 
     //instance variables
@@ -8,6 +12,9 @@ public class Pants extends Clothing {
     //Constants
     //position 0,1,2 represents choices
     public static final String[] BRANDS = new String[]{"Levis","J-Crew","Louie"};
+
+    public final List<String> brands = new ArrayList<>(Arrays.asList("Levis","J-Crew","Louie"));
+
     public static final String[] COLORS = new String[]{"Tan", "Navy", "Black"};
     public static final int PRICE = 20;
     public static final String[] MATERIAL = {"Khaki", "Jean", "Cotton"};
@@ -43,7 +50,7 @@ public class Pants extends Clothing {
 
     @Override
     public String toString() {
-        return "Pants" + super.toString() + "\n Material: " + getMaterial();
+        return "Pants \n" + super.toString();
     }
 
 }

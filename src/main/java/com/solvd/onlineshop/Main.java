@@ -11,8 +11,9 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.solvd.onlineshop.pages.Page.logger;
+
 public class Main implements EnterUsername {
-    public static String username = null;
     static Cart cart = new Cart();
     static ClothingPage clothingPage = new ClothingPage(cart);
     static FurniturePage furniturePage = new FurniturePage(cart);
@@ -49,6 +50,10 @@ public class Main implements EnterUsername {
                     currentPage = (int) cart.checkOut(cart,payment);
                     break;
                 case 5:
+                    break;
+                default:
+                    logger.warning("Invalid selection. Returning to main menu.");
+                    currentPage = 0;
                     break;
             }
         }
