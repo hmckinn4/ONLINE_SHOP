@@ -1,5 +1,9 @@
 package com.solvd.onlineshop.pages;
 
+import com.solvd.onlineshop.enums.Brand;
+import com.solvd.onlineshop.enums.Material;
+import com.solvd.onlineshop.enums.Size;
+import com.solvd.onlineshop.enums.Colors;
 import com.solvd.onlineshop.interfaces.PageDisplay;
 import com.solvd.onlineshop.models.Clothing;
 import com.solvd.onlineshop.models.Jacket;
@@ -34,20 +38,70 @@ public class ClothingPage extends Page implements PageDisplay {
         if (choice.equals("Jackets")) {
             System.out.print("Sizes:");
             System.out.println(Arrays.toString(Clothing.TOPSIZES));
-            String sizeChoice = chooseClothingParams(sc, Clothing.TOPSIZES, "sizes");
+
+            //Converting user input to enum
+            String[] sizesAsString = new String[]{"Small", "Medium", "Large", "X-Large"};
+
+            String sizeChoice = chooseClothingParams(sc, sizesAsString, "sizes");
+            Size size = Size.SMALL;
+            if( sizeChoice.equals("S") ) {
+                size = Size.SMALL;
+            } else if( sizeChoice.equals("M") ) {
+                size = Size.MEDIUM;
+            } else if( sizeChoice.equals("L") ) {
+                size = Size.LARGE;
+            } else if( sizeChoice.equals("XL") ) {
+                size = Size.EXTRA_LARGE;
+            }
 
 
             System.out.print("Color:");
             System.out.println(Arrays.toString(Clothing.TOPCOLORS));
-            String colorChoice = chooseClothingParams(sc, Clothing.TOPCOLORS, "colors");
+
+            //Converting user input to enum
+            String[] colorsAsString = new String[]{"Red", "Blue", "Green"};
+
+            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            Colors color = Colors.RED;
+            if(colorChoice.equals("Red")) {
+                color = Colors.RED;
+            } else if(colorChoice.equals("Blue")) {
+                color = Colors.BLUE;
+            } else if(colorChoice.equals("Green")) {
+                color = Colors.GREEN;
+            }
 
             System.out.print("Material:");
             System.out.println(Arrays.toString(Jacket.MATERIAL));
-            String materialChoice = chooseClothingParams(sc, Jacket.MATERIAL, "material");
+
+            //Converting user input to enum
+            String[] materialsAsString = new String[]{"Cotton", "Polyester", "Leather"};
+
+            String materialChoice = chooseClothingParams(sc, materialsAsString, "material");
+            Material material = Material.COTTON;
+            if( materialChoice.equals("Cotton") ) {
+                material = Material.COTTON;
+            } else if( materialChoice.equals("Polyester") ) {
+                material = Material.POLYESTER;
+            } else if( materialChoice.equals("Leather") ) {
+                material = Material.LEATHER;
+            }
+
 
             System.out.print("Brand:");
             System.out.println(Arrays.toString(Jacket.BRAND));
-            String brandChoice = chooseClothingParams(sc, Jacket.BRAND, "brand");
+            //Converting user input to enum
+            String[] brandAsString = new String[]{"Canada_Goose", "Gucci", "Louis_Vuitton"};
+
+            String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
+            Brand brand = Brand.CANADA_GOOSE;
+            if(brandChoice.equals("Canada_Goose")) {
+                brand = Brand.CANADA_GOOSE;
+            } else if(brandChoice.equals("Gucci")) {
+                brand = Brand.GUCCI;
+            } else if(brandChoice.equals("Louis_Vuitton")) {
+                brand = Brand.LOUIS_VUITTON;
+            }
 
 
             System.out.println("Do you want pockets?:");
@@ -66,14 +120,14 @@ public class ClothingPage extends Page implements PageDisplay {
 
 
             Jacket jacket = new Jacket(Jacket.PRICE,
-                    materialChoice,
-                    colorChoice,
-                    brandChoice,
-                    sizeChoice,
+                    material,
+                    color,
+                    brand,
+                    size,
                     bPocketChoice,
                     bZipperChoice);
             System.out.println(jacket);
-            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
+            System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(jacket);
@@ -84,35 +138,87 @@ public class ClothingPage extends Page implements PageDisplay {
         }
 
         if (choice.equals("Shirts")) {
+
             System.out.print("Sizes:");
             System.out.println(Arrays.toString(Clothing.TOPSIZES));
-            String sizeChoice = chooseClothingParams(sc, Clothing.TOPSIZES, "sizes");
+            String[] sizesAsString = new String[]{"Small", "Medium", "Large", "Extra-Large"};
+
+            String sizeChoice = chooseClothingParams(sc, sizesAsString, "sizes");
+            Size size = Size.SMALL;
+            if( sizeChoice.equals("S") ) {
+                size = Size.SMALL;
+            } else if( sizeChoice.equals("M") ) {
+                size = Size.MEDIUM;
+            } else if( sizeChoice.equals("L") ) {
+                size = Size.LARGE;
+            } else if( sizeChoice.equals("XL") ) {
+                size = Size.EXTRA_LARGE;
+            }
 
 
             System.out.print("Color:");
             System.out.println(Arrays.toString(Clothing.TOPCOLORS));
-            String colorChoice = chooseClothingParams(sc, Clothing.TOPCOLORS, "colors");
+            //Converting user input to enum
+            String[] colorsAsString = new String[]{"Red", "Blue", "Green"};
+
+            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            Colors color = Colors.RED;
+            if(colorChoice.equals("Red")) {
+                color = Colors.RED;
+            } else if(colorChoice.equals("Blue")) {
+                color = Colors.BLUE;
+            } else if(colorChoice.equals("Green")) {
+                color = Colors.GREEN;
+            }
 
             System.out.print("Material:");
             System.out.println(Arrays.toString(Shirt.MATERIAL));
-            String materialChoice = chooseClothingParams(sc, Shirt.MATERIAL, "material");
+            //Converting user input to enum
+            String[] materialsAsString = new String[]{"Cotton", "Polyester", "Silk"};
+
+            String materialChoice = chooseClothingParams(sc, materialsAsString, "material");
+            Material material = Material.COTTON;
+            if( materialChoice.equals("Cotton") ) {
+                material = Material.COTTON;
+            } else if( materialChoice.equals("Polyester") ) {
+                material = Material.POLYESTER;
+            } else if( materialChoice.equals("Silk") ) {
+                material = Material.SILK;
+            }
 
             System.out.print("Brand:");
             System.out.println(Arrays.toString(Shirt.BRAND));
-            String brandChoice = chooseClothingParams(sc, Shirt.BRAND, "brand");
+            //Converting user input to enum
+            String[] brandAsString = new String[]{"Store_Brand", "Nike", "Louis_Vuitton"};
+
+            String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
+            Brand brand = Brand.NIKE;
+            if(brandChoice.equals("Store_Brand")) {
+                brand = Brand.STORE_BRAND;
+            } else if(brandChoice.equals("Nike")) {
+                brand = Brand.NIKE;
+            } else if(brandChoice.equals("Louis_Vuitton")) {
+                brand = Brand.LOUIS_VUITTON;
+            }
+
 
 
             System.out.println("Do you want short sleeve?:");
             String sleeveChoice;
             String[] sleeveOptions = {"Yes", "No"};
             boolean bSleeveChoice;
-            sleeveChoice = chooseClothingParams(sc, sleeveOptions, " pocket choice (Yes or No)");
+            sleeveChoice = chooseClothingParams(sc, sleeveOptions, " sleeve choice (Yes or No)");
             bSleeveChoice = convertChoiceToBool(sleeveChoice);
 
 
-            Shirt shirt = new Shirt(Shirt.PRICE, materialChoice, colorChoice, brandChoice, sizeChoice, bSleeveChoice);
+            Shirt shirt = new Shirt(Shirt.PRICE,
+                    material,
+                    color,
+                    brand,
+                    size,
+                    bSleeveChoice);
             System.out.println(shirt);
-            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
+            System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(shirt);
@@ -134,21 +240,58 @@ public class ClothingPage extends Page implements PageDisplay {
 
             System.out.print("Color:");
             System.out.println(Arrays.toString(Pants.COLORS));
-            String colorChoice = chooseClothingParams(sc, Pants.COLORS, "colors");
+            //Converting user input to enum
+            String[] colorsAsString = new String[]{"Tan","Navy","Black"};
+
+            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            Colors color = Colors.RED;
+            if(colorChoice.equals("Tan")) {
+                color = Colors.TAN;
+            } else if(colorChoice.equals("Navy")) {
+                color = Colors.NAVY;
+            } else if(colorChoice.equals("Black")) {
+                color = Colors.BLACK;
+            }
 
             System.out.print("Brand:");
             System.out.println(Arrays.toString(Pants.BRANDS));
-            String brandChoice = chooseClothingParams(sc, Pants.BRANDS, "brand");
+            //Converting user input to enum
+            String[] brandAsString = new String[]{"Levi", "J_Crew", "Louis_Vuitton"};
+
+            String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
+            Brand brand = Brand.LEVI;
+            if(brandChoice.equals("Levi")) {
+                brand = Brand.LEVI;
+            } else if(brandChoice.equals("J_Crew")) {
+                brand = Brand.J_CREW;
+            } else if(brandChoice.equals("Louis_Vuitton")) {
+                brand = Brand.LOUIS_VUITTON;
+            }
 
 
             System.out.println("Type preferred material:");
             System.out.println(Arrays.toString(Pants.MATERIAL));
-            String materialChoice = chooseClothingParams(sc, Pants.MATERIAL, "Material");
+            //Converting user input to enum
+            String[] materialsAsString = new String[]{"Cotton", "Polyester", "Silk"};
+
+            String materialChoice = chooseClothingParams(sc, materialsAsString, "material");
+            Material material = Material.COTTON;
+            if( materialChoice.equals("Cotton") ) {
+                material = Material.COTTON;
+            } else if( materialChoice.equals("Polyester") ) {
+                material = Material.POLYESTER;
+            } else if( materialChoice.equals("Silk") ) {
+                material = Material.SILK;
+            }
 
 
-            Pants pants = new Pants(Pants.PRICE, materialChoice, colorChoice, brandChoice, size);
+            Pants pants = new Pants(Pants.PRICE,
+                    material,
+                    color,
+                    brand,
+                    size);
             System.out.println(pants);
-            System.out.println("\nDo you want to add to cart? Yes or No to go back to main page:");
+            System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(pants);
@@ -172,7 +315,6 @@ public class ClothingPage extends Page implements PageDisplay {
     }
 
 
-    @Override
     public String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype) {
         boolean returnToMainMenu = false;
         while (returnToMainMenu == false) {

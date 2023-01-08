@@ -1,6 +1,6 @@
 package com.solvd.onlineshop.pages;
 
-import com.solvd.onlineshop.Enums.Size;
+import com.solvd.onlineshop.enums.Size;
 import com.solvd.onlineshop.interfaces.PageDisplay;
 
 import java.util.Scanner;

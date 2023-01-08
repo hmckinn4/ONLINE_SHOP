@@ -1,8 +1,9 @@
 package com.solvd.onlineshop.models;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.solvd.onlineshop.enums.Brand;
+import com.solvd.onlineshop.enums.Colors;
+import com.solvd.onlineshop.enums.Material;
+import com.solvd.onlineshop.enums.Size;
 
 public class Pants extends Clothing {
 
@@ -11,32 +12,30 @@ public class Pants extends Clothing {
 
     //Constants
     //position 0,1,2 represents choices
-    public static final String[] BRANDS = new String[]{"Levis","J-Crew","Louie"};
+    public static final Brand[] BRANDS = new Brand[]{Brand.LEVI,Brand.J_CREW,Brand.LOUIS_VUITTON};
 
-    public final List<String> brands = new ArrayList<>(Arrays.asList("Levis","J-Crew","Louie"));
-
-    public static final String[] COLORS = new String[]{"Tan", "Navy", "Black"};
+    public static final Colors[] COLORS = new Colors[]{Colors.TAN,Colors.BLACK,Colors.NAVY};
     public static final int PRICE = 20;
-    public static final String[] MATERIAL = {"Khaki", "Jean", "Cotton"};
+    public static final Material[] MATERIAL = new Material[]{Material.JEANS,Material.COTTON,Material.KHAKI};
 
 
     //constructor
     public Pants(int productPrice,
-                 String material,
-                 String color,
-                 String brand,
+                 Material material,
+                 Colors color,
+                 Brand brand,
                  int waistSize) {
-        super(productPrice, material, color, brand, String.valueOf(waistSize));
+        super(productPrice, material, color, brand, Size.SMALL);
         this.material = material;
         this.waistSize = waistSize;
     }
 
 
-    public void setMaterial(String material) {
+    public void setMaterial(Material material) {
         this.material = null;
     }
 
-    public String getMaterial() {
+    public Material getMaterial() {
         return this.material;
     }
 

@@ -1,7 +1,7 @@
-package com.solvd.onlineshop.Enums;
+package com.solvd.onlineshop.enums;
 
 public enum Size {
-    SMALL("S"), MEDIUM("M"), LARGE("L"), EXTRA_LARGE("XL");
+    SMALL("Small"), MEDIUM("Medium"), LARGE("Large"), EXTRA_LARGE("Extra-Large");
 
     private String abbreviation;
 
@@ -11,5 +11,9 @@ public enum Size {
 
     public String getAbbreviation() {
         return abbreviation;
+    }
+
+    public String toString() {
+        return this.abbreviation;
     }
 }

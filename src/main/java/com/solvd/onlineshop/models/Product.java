@@ -1,18 +1,20 @@
 package com.solvd.onlineshop.models;
 
 
-import com.solvd.onlineshop.interfaces.IDisplay;
+import com.solvd.onlineshop.enums.Brand;
+import com.solvd.onlineshop.enums.Colors;
+import com.solvd.onlineshop.enums.Material;
 
-abstract public class Product implements IDisplay {
+abstract public class Product {
     public int productID;
     public int price;
-    public String material;
-    public String color;
-    public String brand;
+    public Material material;
+    public Colors color;
+    public Brand brand;
     public static int numberOfProducts = 0;
 
     //constructor
-    public Product( int productPrice, String material, String color, String brand) {
+    public Product(int productPrice, Material material, Colors color, Brand brand) {
         this.price = productPrice;
         this.material = material;
         this.color = color;
@@ -35,32 +37,23 @@ abstract public class Product implements IDisplay {
 
     public void setPrice(int inputPrice) { this.price = inputPrice; }
 
-    public String getColor() {return this.color;}
+    public Colors getColor() {return this.color;}
 
-    public void setColor(String color) {this.color = color;}
+    public void setColor(Colors color) {this.color = color;}
 
-    public String getMaterial() {return this.material;}
+    public Material getMaterial() {return this.material;}
 
-    public void setMaterial(String material) {
+    public void setMaterial(Material material) {
         this.material = material;
     }
 
-    public String getBrand() {
+    public Brand getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(Brand brand) {
         this.brand = brand;
     }
-
-//    @Override
-//    public String toString()
-//    {return "Product Number: #" +
-//            this.getID() + "\n Price: $" +
-//            this.getPrice() + "\n Color: " +
-//            this.getColor() + "\n Material: " +
-//            this.getMaterial() + "\n Brand: " +
-//            this.getBrand();}
 
     @Override
     public boolean equals(Object o) {

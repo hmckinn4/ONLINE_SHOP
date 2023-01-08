@@ -1,5 +1,10 @@
 package com.solvd.onlineshop.models;
 
+import com.solvd.onlineshop.enums.Brand;
+import com.solvd.onlineshop.enums.Material;
+import com.solvd.onlineshop.enums.Size;
+import com.solvd.onlineshop.enums.Colors;
+
 public class Jacket extends Clothing {
 
     //subclass fields
@@ -10,9 +15,9 @@ public class Jacket extends Clothing {
     //concatonate strings to number and convert the id to a int
 
 
-    public static final String [] MATERIAL = new String[] {"Leather", "Cotton", "Polyester"};
+    public static final Material[] MATERIAL = new Material[] {Material.COTTON, Material.POLYESTER, Material.LEATHER};
 
-    public static final String [] BRAND = new String[] {"Canada-Goose", "Gucci", "Louie"};
+    public static final Brand[] BRAND = new Brand[] {Brand.CANADA_GOOSE,Brand.GUCCI,Brand.LOUIS_VUITTON};
     public static final int PRICE = 40;
     public static final boolean POCKETS = true;
     public static final boolean ZIPPERS = true;
@@ -20,10 +25,10 @@ public class Jacket extends Clothing {
 
     //constructor
     public Jacket(int productPrice,
-                  String material,
-                  String color,
-                  String brand,
-                  String size,
+                  Material material,
+                  Colors color,
+                  Brand brand,
+                  Size size,
                   boolean hasPockets,
                   boolean hasZippers)
     {

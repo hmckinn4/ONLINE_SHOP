@@ -1,17 +1,19 @@
 package com.solvd.onlineshop.models;
 
-import java.util.Objects;
+import com.solvd.onlineshop.enums.Brand;
+import com.solvd.onlineshop.enums.Colors;
+import com.solvd.onlineshop.enums.Material;
 
 public abstract class Furniture extends Product {
     //Product fields
 
     private boolean hasCupholders;
 
-    public static final String [] MATERIAL = new String[] {"Wood", "Plastic", "Metal"};
-    public static final String [] BRAND = new String[] {"Ikea", "Walmart", "Restoration Hardware"};
+    public static final Material[] MATERIAL = new Material[] {Material.METAL, Material.PLASTIC, Material.WOOD};
+    public static final Brand[] BRAND = new Brand[] {Brand.WALMART,Brand.IKEA,Brand.RESTORATION_HARDWARE};
     public static final boolean CUPHOLDERS = true;
 
-    public Furniture(int productPrice, String material, String color, String brand, boolean hasCupholders) {
+    public Furniture(int productPrice, Material material, Colors color, Brand brand, boolean hasCupholders) {
         super(productPrice, material, color, brand);
         this.hasCupholders = hasCupholders;
     }

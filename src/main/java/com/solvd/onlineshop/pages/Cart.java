@@ -3,6 +3,7 @@ package com.solvd.onlineshop.pages;
 import com.solvd.onlineshop.interfaces.AddtoCart;
 import com.solvd.onlineshop.interfaces.CheckOut;
 import com.solvd.onlineshop.interfaces.RemoveFromCart;
+import com.solvd.onlineshop.interfaces.ShowCart;
 import com.solvd.onlineshop.models.Product;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 
 import static com.solvd.onlineshop.pages.Page.logger;
 
-public class Cart implements AddtoCart, RemoveFromCart, CheckOut {
+public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
     public ArrayList<Product> productInCart = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
     @Override

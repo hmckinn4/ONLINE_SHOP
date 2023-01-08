@@ -1,21 +1,26 @@
 package com.solvd.onlineshop.models;
 
+import com.solvd.onlineshop.enums.Brand;
+import com.solvd.onlineshop.enums.Colors;
+import com.solvd.onlineshop.enums.Material;
+import com.solvd.onlineshop.enums.Size;
+
 public class Shirt extends Clothing {
     //array of strings
     private boolean shortOrLongSleeve;
 
     public static final int PRICE = 15;
-    public static final String [] MATERIAL = new String[] {"Cotton", "Polyester", "Silk"};
-    public static final String [] BRAND = new String[] {"Store Brand", "Nike", "Louie"};
+    public static final Material[] MATERIAL = new Material[] {Material.COTTON,Material.POLYESTER,Material.SILK};
+    public static final Brand[] BRAND = new Brand[] {Brand.STORE_BRAND,Brand.NIKE,Brand.LOUIS_VUITTON};
     public static final boolean SHORTSLEEVE = true;
     //constructor
 
 
     public Shirt(int productPrice,
-                 String material,
-                 String color,
-                 String brand,
-                 String size,
+                 Material material,
+                 Colors color,
+                 Brand brand,
+                 Size size,
                  boolean shortOrLongSleeve)
     {
         super(productPrice, material, color, brand, size);

@@ -1,34 +1,33 @@
 package com.solvd.onlineshop.models;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.solvd.onlineshop.enums.Brand;
+import com.solvd.onlineshop.enums.Material;
+import com.solvd.onlineshop.enums.Size;
+import com.solvd.onlineshop.enums.Colors;
 
 public abstract class Clothing extends Product {
     //Product fields
-    public String size;
+    public Size size;
 
-    public static final String [] TOPSIZES = new String[] {"S","M","L"};
+    public static final Size [] TOPSIZES = new Size[] {Size.SMALL, Size.MEDIUM, Size.LARGE, Size.EXTRA_LARGE};
 
-    public List<String> topsizesList = new ArrayList<>(Arrays.asList("S","M","L"));
-    //position 0,1,2 represents choices
-    public static final String [] TOPCOLORS = new String[] {"Red","Blue","Green"};
+    public static final Colors[] TOPCOLORS = new Colors[] {Colors.RED, Colors.BLUE, Colors.GREEN,};
 
     public static final int [] BOTTOMSWAISTSIZE = {29,30,31,32,33,34,35,36};
 
     //constructor
 
 
-    public Clothing(int productPrice, String material, String color, String brand, String size) {
+    public Clothing(int productPrice, Material material, Colors color, Brand brand, Size size) {
         super(productPrice, material, color, brand);
         this.size = size;
     }
 
-    public String getSize() {
+    public Size getSize() {
         return size;
     }
 
-    public void setSize(String size) {
+    public void setSize(Size size) {
         this.size = size;
     }
 
