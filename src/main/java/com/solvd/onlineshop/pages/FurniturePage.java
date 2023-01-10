@@ -32,6 +32,7 @@ public class FurniturePage extends Page {
                 "Chair: $" + Chair.PRICE + "\n" +
                 "Table: $" + Table.PRICE + "\n");
         String choice = sc.next();
+        choice = this.formatInput.format(choice);
 
         if (choice.equals("Couch")) {
 

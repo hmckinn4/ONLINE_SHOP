@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 import static com.solvd.onlineshop.pages.Page.logger;
 
-public class Main implements EnterUsername {
+public class Main{
     static Cart cart = new Cart();
     static ClothingPage clothingPage = new ClothingPage(cart);
     static FurniturePage furniturePage = new FurniturePage(cart);

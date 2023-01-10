@@ -34,6 +34,7 @@ public class ClothingPage extends Page implements PageDisplay {
                 "Shirts: $" + Shirt.PRICE + "\n" +
                 "Pants: $" + Pants.PRICE + "\n");
         String choice = sc.next();
+        choice = this.formatInput.format(choice);
 
         if (choice.equals("Jackets")) {
             System.out.print("Sizes:");
