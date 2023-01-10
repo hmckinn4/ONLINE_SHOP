@@ -1,7 +1,6 @@
 package com.solvd.onlineshop;
 
-import com.solvd.onlineshop.exceptions.UsernameException;
-import com.solvd.onlineshop.interfaces.EnterUsername;
+import com.solvd.onlineshop.exceptions.UsernameNumberException;
 import com.solvd.onlineshop.pages.Cart;
 import com.solvd.onlineshop.pages.ClothingPage;
 import com.solvd.onlineshop.pages.FurniturePage;
@@ -19,7 +18,7 @@ public class Main implements EnterUsername {
     static FurniturePage furniturePage = new FurniturePage(cart);
 
 
-    public static void main(String[] args) throws UsernameException {
+    public static void main(String[] args) throws UsernameNumberException {
         Scanner sc = new Scanner(System.in);
         //ask user for name
 
@@ -59,26 +58,30 @@ public class Main implements EnterUsername {
         }
     }
 
-    public static String enterUsername(Scanner sc) throws UsernameException {
+    public static String enterUsername(Scanner sc) throws UsernameNumberException {
         String username = null;
         boolean status = true;
         while(status) {
             try {
                 System.out.print("Enter customer name: ");
                 username = sc.nextLine();
+//                username = this.formatInput.format(username);
 
                 // Use a regular expression to check for numeric characters
                 Pattern pattern = Pattern.compile("\\d");
                 Matcher matcher = pattern.matcher(username);
 
                 if (matcher.find()) {
-                    throw new UsernameException("Customer name cannot contain numbers");
+                    throw new UsernameNumberException("Customer name cannot contain numbers");
+                } if (username.length() < 3) {
+                    throw new UsernameNumberException("Customer name must be at least 3 characters");
                 }
 
                 status = false;
-            } catch (UsernameException e) {
+            } catch (UsernameNumberException e) {
                 System.out.println(e.getMessage());
             }
+
         }
         return username;
     }

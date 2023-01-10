@@ -255,8 +255,8 @@ public class FurniturePage extends Page {
         }
         return 0;
     }
-
-        protected boolean convertChoiceToBool(String choice) {
+        @Override
+        public boolean convertChoiceToBool(String choice) {
             if(choice.equals("Yes")){
                 return true;
             } else {
@@ -264,18 +264,22 @@ public class FurniturePage extends Page {
             }
         }
 
+        @Override
         public String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype) {
             boolean isValid = false;
             String choice = null;
             while (!isValid) {
                 System.out.println("Enter preferred parameter of " + choicetype + ":");
                 choice = sc.next();
-//                choice = upperCase.apply(choice);
+                //makes choice case insensitive
+                choice = this.formatInput.format(choice);
+
                 for (String param : validOptions) {
                     if (choice.equals(param))
                         isValid = true;
                 }
                 if (isValid == false) {
+                    //throw new InvalidInputException("Please Input Valid Entry");
                     logger.warning("Please Input Valid Entry");
                 }
             }
@@ -287,20 +291,7 @@ public class FurniturePage extends Page {
         return 0;
     }
 
-    @Override
-    public int ShowPage() {
-        return 0;
-    }
 
-    @Override
-    public boolean convertChoiceToBool() {
-        return false;
-    }
-
-    @Override
-    public String chooseClothingParams() {
-        return null;
-    }
 }
 
 

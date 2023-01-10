@@ -1,6 +1,7 @@
 package com.solvd.onlineshop.pages;
 
 import com.solvd.onlineshop.enums.Size;
+import com.solvd.onlineshop.functionalinterfaces.FormatInput;
 import com.solvd.onlineshop.interfaces.PageDisplay;
 
 import java.util.Scanner;
@@ -8,11 +9,10 @@ import java.util.logging.Logger;
 
 public abstract class Page implements PageDisplay {
 
-    public interface UpperCase {
-        String apply(String s);
-    }
+
     // Define the lambda function
-    public UpperCase upperCase = s -> s.toUpperCase();
+    // lambda expression to make uppercase string
+    public FormatInput formatInput = (String s) -> s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
 
     //Enum
     private Size size;
@@ -22,7 +22,7 @@ public abstract class Page implements PageDisplay {
 
     public abstract int showPage(Scanner sc);
 
-    protected abstract boolean convertChoiceToBool(String choice);
+    public abstract boolean convertChoiceToBool(String choice);
 
     public abstract String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype);
 

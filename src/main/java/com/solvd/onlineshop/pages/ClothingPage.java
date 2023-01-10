@@ -303,7 +303,7 @@ public class ClothingPage extends Page implements PageDisplay {
     }
 
     @Override
-    protected boolean convertChoiceToBool(String choice) throws NullPointerException {
+    public boolean convertChoiceToBool(String choice) throws NullPointerException {
         if (choice == null) {
             throw new NullPointerException("Choice is null");
         }
@@ -374,20 +374,6 @@ public class ClothingPage extends Page implements PageDisplay {
         return 0;
     }
 
-    @Override
-    public int ShowPage() {
-        return 0;
-    }
-
-    @Override
-    public boolean convertChoiceToBool() {
-        return false;
-    }
-
-    @Override
-    public String chooseClothingParams() {
-        return null;
-    }
 }
 
 

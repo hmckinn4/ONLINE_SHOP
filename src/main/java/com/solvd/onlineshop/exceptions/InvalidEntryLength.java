@@ -4,10 +4,10 @@ import java.io.OptionalDataException;
 
 import static com.solvd.onlineshop.pages.Page.logger;
 
-public class InvalidEntry extends Exception {
-    public InvalidEntry(String message) {
+public class InvalidEntryLength extends Exception {
+    public InvalidEntryLength(String message) {
         OptionalDataException input = null;
-        if (input.length > 1) {
+        if (input.length < 3) {
             logger.warning("Please Input Valid Entry");
         }
     }

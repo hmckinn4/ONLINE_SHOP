@@ -11,7 +11,7 @@ public enum Colors {
     MAROON("Maroon"),
     WHITE("White"),
     OAK("Oak"),
-    GRAY("Gray"),;
+    GRAY("Gray");
 
     private String abbreviation;
 

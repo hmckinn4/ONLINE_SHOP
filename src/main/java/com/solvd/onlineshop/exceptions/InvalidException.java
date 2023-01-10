@@ -1,6 +1,6 @@
 package com.solvd.onlineshop.exceptions;
 
-public class InvalidException extends InvalidEntry {
+public class InvalidException extends Exception {
     public InvalidException(String message) {
         super(message);
     }

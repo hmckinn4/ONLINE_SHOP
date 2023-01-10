@@ -31,18 +31,7 @@ public class HomePage {
                     throw new Exception("Invalid input. Please enter an integer between -1 and 5.");
                 }
             } catch (InputMismatchException e) {
-
-                logger.warning("Invalid input. Please enter a valid integer."
-                        +
-
-                        "\n\nStore System Menu \n"
-                        + "0. Return to Homepage \n"
-                        + "1. View Cart \n"
-                        + "2. View Clothing Selection \n"
-                        + "3. View Furniture Selection \n"
-                        + "4. Checkout \n"
-                        + "-1. Exit the program ");
-                sc.next(); // consume the invalid input
+                logger.warning("Invalid input. Please enter a valid integer.");
             } catch (Exception e) {
                 logger.warning("Invalid input. Please enter an integer between -1 and 5." +
                         "\n\nStore System Menu \n"
@@ -52,7 +41,6 @@ public class HomePage {
                         + "3. View Furniture Selection \n"
                         + "4. Checkout \n"
                         + "-1. Exit the program ");
-                sc.next(); // consume the invalid input
             }
         }
         return currentPage;
