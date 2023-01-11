@@ -1,5 +1,7 @@
 package com.solvd.onlineshop.pages;
 
+import com.solvd.onlineshop.functionalinterfaces.FormatInput;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -7,8 +9,12 @@ import static com.solvd.onlineshop.pages.Page.logger;
 
 public class HomePage {
 
-    public static int showPage(Scanner sc, String username) {
+    public FormatInput formatInput;
+
+    public int showPage(Scanner sc, String username) {
         String greeting = "Welcome "  + username + "!\n" + "\n" + "Navigate menu to begin shopping";
+//        //makes choice case insensitive
+//        this.formatInput.format(username);
         System.out.println(greeting);
         String options =  "\n\nStore System Menu \n"
                 + "0. Return to Homepage \n"

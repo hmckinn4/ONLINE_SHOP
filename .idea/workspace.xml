@@ -5,12 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04894a-9a58-4dfa-9362-851e5da570bd" name="Changes" comment="More Additions&#10;&#10;Remove from cart&#10;Check out&#10;Interfaces^^">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/enums/BottomWaistSize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/FurniturePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/FurniturePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/enums/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/enums/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Clothing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Clothing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Jacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Jacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Pants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Pants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Shirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Shirt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/ClothingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/ClothingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Page.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/interfaces/EnterUsername.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/FurniturePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/FurniturePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Clothing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Clothing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Jacket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Jacket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Pants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Pants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Shirt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Shirt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/ClothingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/ClothingPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/HomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/Page.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +38,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -42,6 +57,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2IybvwTKgHJGIqGj8XzlsSCZ2Ow" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

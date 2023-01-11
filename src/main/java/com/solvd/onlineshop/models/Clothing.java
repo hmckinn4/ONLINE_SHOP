@@ -1,9 +1,6 @@
 package com.solvd.onlineshop.models;
 
-import com.solvd.onlineshop.enums.Brand;
-import com.solvd.onlineshop.enums.Material;
-import com.solvd.onlineshop.enums.Size;
-import com.solvd.onlineshop.enums.Colors;
+import com.solvd.onlineshop.enums.*;
 
 public abstract class Clothing extends Product {
     //Product fields
@@ -13,12 +10,12 @@ public abstract class Clothing extends Product {
 
     public static final Colors[] TOPCOLORS = new Colors[] {Colors.RED, Colors.BLUE, Colors.GREEN,};
 
-    public static final int [] BOTTOMSWAISTSIZE = {29,30,31,32,33,34,35,36};
+    public static final BottomWaistSize[] BOTTOMSWAISTSIZE = new BottomWaistSize[] {BottomWaistSize.XS, BottomWaistSize.S, BottomWaistSize.M, BottomWaistSize.L, BottomWaistSize.XL, BottomWaistSize.XXL};
 
     //constructor
 
 
-    public Clothing(int productPrice, Material material, Colors color, Brand brand, Size size) {
+    public Clothing(int productPrice, Material material, Colors color, Brand brand, Size size, BottomWaistSize waistSize) {
         super(productPrice, material, color, brand);
         this.size = size;
     }

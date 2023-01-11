@@ -23,7 +23,7 @@ public class Shirt extends Clothing {
                  Size size,
                  boolean shortOrLongSleeve)
     {
-        super(productPrice, material, color, brand, size);
+        super(productPrice, material, color, brand, size,null);
         this.shortOrLongSleeve = shortOrLongSleeve;
     }
 

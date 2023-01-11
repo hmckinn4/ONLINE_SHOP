@@ -3,13 +3,13 @@ package com.solvd.onlineshop.enums;
 public enum Brand {
     IKEA("Ikea"),
     WALMART("Walmart"),
-    RESTORATION_HARDWARE("Restoration Hardware"),
-    LOUIS_VUITTON("Louis Vuitton"),
-    CANADA_GOOSE("Canada Goose"),
+    RESTORATION_HARDWARE("Restoration-Hardware"),
+    LOUIS_VUITTON("Louis-Vuitton"),
+    CANADA_GOOSE("Canada-Goose"),
     GUCCI("Gucci"),
     NIKE("Nike"),
-    STORE_BRAND("Store Brand"),
-    J_CREW("J Crew"),
+    STORE_BRAND("Store-Brand"),
+    J_CREW("J-Crew"),
     LEVI("Levi");
 
     private String brand;

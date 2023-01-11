@@ -32,7 +32,7 @@ public class Jacket extends Clothing {
                   boolean hasPockets,
                   boolean hasZippers)
     {
-        super(productPrice, material, color, brand, size);
+        super(productPrice, material, color, brand, size,null);
         this.hasPockets = hasPockets;
         this.hasZippers = hasZippers;
     }

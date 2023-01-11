@@ -1,9 +1,6 @@
 package com.solvd.onlineshop.pages;
 
-import com.solvd.onlineshop.enums.Brand;
-import com.solvd.onlineshop.enums.Material;
-import com.solvd.onlineshop.enums.Size;
-import com.solvd.onlineshop.enums.Colors;
+import com.solvd.onlineshop.enums.*;
 import com.solvd.onlineshop.interfaces.PageDisplay;
 import com.solvd.onlineshop.models.Clothing;
 import com.solvd.onlineshop.models.Jacket;
@@ -92,15 +89,15 @@ public class ClothingPage extends Page implements PageDisplay {
             System.out.print("Brand:");
             System.out.println(Arrays.toString(Jacket.BRAND));
             //Converting user input to enum
-            String[] brandAsString = new String[]{"Canada_Goose", "Gucci", "Louis_Vuitton"};
+            String[] brandAsString = new String[]{"Canada-Goose", "Gucci", "Louis-Vuitton"};
 
             String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
             Brand brand = Brand.CANADA_GOOSE;
-            if(brandChoice.equals("Canada_Goose")) {
+            if(brandChoice.equals("Canada-Goose")) {
                 brand = Brand.CANADA_GOOSE;
             } else if(brandChoice.equals("Gucci")) {
                 brand = Brand.GUCCI;
-            } else if(brandChoice.equals("Louis_Vuitton")) {
+            } else if(brandChoice.equals("Louis-Vuitton")) {
                 brand = Brand.LOUIS_VUITTON;
             }
 
@@ -190,15 +187,15 @@ public class ClothingPage extends Page implements PageDisplay {
             System.out.print("Brand:");
             System.out.println(Arrays.toString(Shirt.BRAND));
             //Converting user input to enum
-            String[] brandAsString = new String[]{"Store_Brand", "Nike", "Louis_Vuitton"};
+            String[] brandAsString = new String[]{"Store-Brand", "Nike", "Louis-Vuitton"};
 
             String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
             Brand brand = Brand.NIKE;
-            if(brandChoice.equals("Store_Brand")) {
+            if(brandChoice.equals("Store-Brand")) {
                 brand = Brand.STORE_BRAND;
             } else if(brandChoice.equals("Nike")) {
                 brand = Brand.NIKE;
-            } else if(brandChoice.equals("Louis_Vuitton")) {
+            } else if(brandChoice.equals("Louis-Vuitton")) {
                 brand = Brand.LOUIS_VUITTON;
             }
 
@@ -231,12 +228,32 @@ public class ClothingPage extends Page implements PageDisplay {
         if (choice.equals("Pants")) {
             System.out.print("Sizes:");
             System.out.println(Arrays.toString(Pants.BOTTOMSWAISTSIZE));
-            String[] sizes = new String[Pants.BOTTOMSWAISTSIZE.length];
-            for (int i = 0; i < Pants.BOTTOMSWAISTSIZE.length; i++) {
-                sizes[i] = Integer.toString(Pants.BOTTOMSWAISTSIZE[i]);
+            //Converting user input to enum
+            String[] sizesAsString = new String[]{"XS","S","M","L","XL","XXL"};
+
+            String waistSizeChoice = chooseClothingParams(sc, sizesAsString, "sizes");
+            BottomWaistSize waistSize = BottomWaistSize.XS;
+            if(waistSizeChoice.equals("XS")) {
+                waistSize = BottomWaistSize.XS;
+            } else if(waistSizeChoice.equals("S")) {
+                waistSize = BottomWaistSize.S;
+            } else if(waistSizeChoice.equals("M")) {
+                waistSize = BottomWaistSize.M;
+            } else if(waistSizeChoice.equals("L")) {
+                waistSize = BottomWaistSize.L;
+            } else if(waistSizeChoice.equals("XL")) {
+                waistSize = BottomWaistSize.XL;
+            } else if(waistSizeChoice.equals("XXL")) {
+                waistSize = BottomWaistSize.XXL;
             }
-            String sizeChoice = chooseClothingParams(sc, sizes, "sizes");
-            int size = convertChoiceToInt(sizeChoice);
+
+
+//            String[] sizes = new String[Pants.BOTTOMSWAISTSIZE.length];
+//            for (int i = 0; i < Pants.BOTTOMSWAISTSIZE.length; i++) {
+//                sizes[i] = Integer.toString(Pants.BOTTOMSWAISTSIZE[i]);
+//            }
+//            String sizeChoice = chooseClothingParams(sc, sizes, "sizes");
+//            int size = convertChoiceToInt(sizeChoice);
 
 
             System.out.print("Color:");
@@ -257,15 +274,15 @@ public class ClothingPage extends Page implements PageDisplay {
             System.out.print("Brand:");
             System.out.println(Arrays.toString(Pants.BRANDS));
             //Converting user input to enum
-            String[] brandAsString = new String[]{"Levi", "J_Crew", "Louis_Vuitton"};
+            String[] brandAsString = new String[]{"Levi", "J-Crew", "Louis-Vuitton"};
 
             String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
             Brand brand = Brand.LEVI;
             if(brandChoice.equals("Levi")) {
                 brand = Brand.LEVI;
-            } else if(brandChoice.equals("J_Crew")) {
+            } else if(brandChoice.equals("J-Crew")) {
                 brand = Brand.J_CREW;
-            } else if(brandChoice.equals("Louis_Vuitton")) {
+            } else if(brandChoice.equals("Louis-Vuitton")) {
                 brand = Brand.LOUIS_VUITTON;
             }
 
@@ -290,7 +307,7 @@ public class ClothingPage extends Page implements PageDisplay {
                     material,
                     color,
                     brand,
-                    size);
+                    waistSize);
             System.out.println(pants);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
@@ -324,6 +341,8 @@ public class ClothingPage extends Page implements PageDisplay {
             while (!isValid) {
                 System.out.println("\nEnter preferred parameter of " + choicetype + "\n" + "Enter Homepage to return to Main Menu");
                 choice = sc.next();
+                //makes choice case insensitive
+                choice = this.formatInput.format(choice);
                 if (choice.equals("Homepage")) {
                     // Set returnToMainMenu to true to break out of the loop
                     returnToMainMenu = true;
@@ -365,11 +384,11 @@ public class ClothingPage extends Page implements PageDisplay {
         }
 
         // Check if the size is in the BOTTOMSWAISTSIZE array
-        for (int i = 0; i < Pants.BOTTOMSWAISTSIZE.length; i++) {
-            if (size == Pants.BOTTOMSWAISTSIZE[i]) {
-                return size;
-            }
-        }
+//        for (int i = 0; i < Pants.BOTTOMSWAISTSIZE.length; i++) {
+//            if (size == Pants.BOTTOMSWAISTSIZE[i]) {
+//                return size;
+//            }
+//        }
 
         // If the size is not in the BOTTOMSWAISTSIZE array, return 0
         return 0;

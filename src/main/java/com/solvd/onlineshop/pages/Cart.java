@@ -56,7 +56,7 @@ public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
         System.out.println("------End of Cart------");
 
         while(true) {
-            System.out.println("\nContinue Shopping? (Yes) or Enter ProductID to remove from cart (ID)");
+            System.out.println("\nReturn to main menu? (Yes) or Enter ProductID to remove from cart (ID)");
             String choice = sc.next();
             if(choice.equals("Yes")) {
                 return 0;

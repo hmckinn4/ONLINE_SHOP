@@ -1,6 +1,7 @@
 package com.solvd.onlineshop;
 
 import com.solvd.onlineshop.exceptions.UsernameNumberException;
+import com.solvd.onlineshop.functionalinterfaces.FormatInput;
 import com.solvd.onlineshop.pages.Cart;
 import com.solvd.onlineshop.pages.ClothingPage;
 import com.solvd.onlineshop.pages.FurniturePage;
@@ -16,6 +17,9 @@ public class Main{
     static Cart cart = new Cart();
     static ClothingPage clothingPage = new ClothingPage(cart);
     static FurniturePage furniturePage = new FurniturePage(cart);
+    static HomePage homePage = new HomePage();
+
+    public FormatInput formatInput = (String s) -> s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
 
 
     public static void main(String[] args) throws UsernameNumberException {
@@ -23,7 +27,8 @@ public class Main{
         //ask user for name
 
 //        System.out.println("Enter customer name to continue:\n");
-        String username = enterUsername(sc);
+        String username = String.format(enterUsername(sc));
+        //makes choice case insensitive
 
 
         //when break, hit homepage.showPage();
@@ -31,7 +36,7 @@ public class Main{
         while(currentPage !=  -1) {
             switch (currentPage) {
                 case 0: //homepage
-                    currentPage = HomePage.showPage(sc, username);
+                    currentPage = homePage.showPage(sc, username);
                     break;
                 case 1: // cart page
                     currentPage = cart.showCart();

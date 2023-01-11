@@ -1,14 +1,11 @@
 package com.solvd.onlineshop.models;
 
-import com.solvd.onlineshop.enums.Brand;
-import com.solvd.onlineshop.enums.Colors;
-import com.solvd.onlineshop.enums.Material;
-import com.solvd.onlineshop.enums.Size;
+import com.solvd.onlineshop.enums.*;
 
 public class Pants extends Clothing {
 
     //instance variables
-    public int waistSize;
+    public BottomWaistSize waistSize;
 
     //Constants
     //position 0,1,2 represents choices
@@ -24,8 +21,8 @@ public class Pants extends Clothing {
                  Material material,
                  Colors color,
                  Brand brand,
-                 int waistSize) {
-        super(productPrice, material, color, brand, Size.SMALL);
+                 BottomWaistSize waistSize) {
+        super(productPrice, material, color, brand, null, waistSize);
         this.material = material;
         this.waistSize = waistSize;
     }
@@ -39,11 +36,7 @@ public class Pants extends Clothing {
         return this.material;
     }
 
-    public void setWaistSize(int waistSize) {
-        this.waistSize = 0;
-    }
-
-    public int getWaistSize() {
+    public BottomWaistSize getWaistSize() {
         return this.waistSize;
     }
 
