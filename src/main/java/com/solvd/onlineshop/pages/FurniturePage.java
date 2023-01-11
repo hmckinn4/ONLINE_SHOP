@@ -97,6 +97,7 @@ public class FurniturePage extends Page {
             System.out.println(couch);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
+            addToCartChoice = this.formatInput.format(addToCartChoice);
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(couch);
                 return 1;
@@ -177,6 +178,7 @@ public class FurniturePage extends Page {
             System.out.println(chair);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
+            addToCartChoice = this.formatInput.format(addToCartChoice);
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(chair);
                 return 1;
@@ -188,16 +190,16 @@ public class FurniturePage extends Page {
             System.out.print("Color:");
             System.out.println(Arrays.toString(Table.COLORS));
             //Converting user input to enum
-            String[] colorsAsString = new String[]{"Beige","Maroon","Black"};
+            String[] colorsAsString = new String[]{"Oak","White","Gray"};
 
             String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
             Colors color = Colors.RED;
-            if(colorChoice.equals("Beige")){
-                color = Colors.BEIGE;
-            }else if(colorChoice.equals("Maroon")){
-                color = Colors.MAROON;
-            }else if(colorChoice.equals("Black")){
-                color = Colors.BLACK;
+            if(colorChoice.equals("Oak")){
+                color = Colors.OAK;
+            }else if(colorChoice.equals("White")){
+                color = Colors.WHITE;
+            }else if(colorChoice.equals("Gray")){
+                color = Colors.GRAY;
             }
 
 
@@ -248,6 +250,8 @@ public class FurniturePage extends Page {
             System.out.println(table);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
+            addToCartChoice = this.formatInput.format(addToCartChoice);
+
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(table);
                 return 1;

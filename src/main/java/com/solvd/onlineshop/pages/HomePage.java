@@ -16,7 +16,8 @@ public class HomePage {
 //        //makes choice case insensitive
 //        this.formatInput.format(username);
         System.out.println(greeting);
-        String options =  "\n\nStore System Menu \n"
+        String options =  "\n\nMAIN MENU \n"
+                + "------------------- \n"
                 + "0. Return to Homepage \n"
                 + "1. View Cart \n"
                 + "2. View Clothing Selection \n"
@@ -40,7 +41,8 @@ public class HomePage {
                 logger.warning("Invalid input. Please enter a valid integer.");
             } catch (Exception e) {
                 logger.warning("Invalid input. Please enter an integer between -1 and 5." +
-                        "\n\nStore System Menu \n"
+                        "\n\nMAIN MENU \n"
+                        + "------------------- \n"
                         + "0. Return to Homepage \n"
                         + "1. View Cart \n"
                         + "2. View Clothing Selection \n"

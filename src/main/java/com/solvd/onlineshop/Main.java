@@ -27,7 +27,8 @@ public class Main{
         //ask user for name
 
 //        System.out.println("Enter customer name to continue:\n");
-        String username = String.format(enterUsername(sc));
+        String username = enterUsername(sc);
+        String.format(username);
         //makes choice case insensitive
 
 

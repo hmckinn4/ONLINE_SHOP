@@ -127,6 +127,7 @@ public class ClothingPage extends Page implements PageDisplay {
             System.out.println(jacket);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
+            addToCartChoice = this.formatInput.format(addToCartChoice);
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(jacket);
                 return 1;
@@ -218,6 +219,7 @@ public class ClothingPage extends Page implements PageDisplay {
             System.out.println(shirt);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
+            addToCartChoice = this.formatInput.format(addToCartChoice);
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(shirt);
                 return 1;
@@ -311,6 +313,7 @@ public class ClothingPage extends Page implements PageDisplay {
             System.out.println(pants);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
+            addToCartChoice = this.formatInput.format(addToCartChoice);
             if (addToCartChoice.equals("Yes")) {
                 cart.addCart(pants);
                 return 1;

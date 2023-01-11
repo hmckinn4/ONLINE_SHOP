@@ -1,5 +1,8 @@
 package com.solvd.onlineshop.pages;
 
+import com.solvd.onlineshop.exceptions.InsufficientPaymentException;
+import com.solvd.onlineshop.functionalinterfaces.DiscountCalculator;
+import com.solvd.onlineshop.functionalinterfaces.FormatInput;
 import com.solvd.onlineshop.interfaces.AddtoCart;
 import com.solvd.onlineshop.interfaces.CheckOut;
 import com.solvd.onlineshop.interfaces.RemoveFromCart;
@@ -14,6 +17,8 @@ import static com.solvd.onlineshop.pages.Page.logger;
 public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
     public ArrayList<Product> productInCart = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
+    private FormatInput formatInput;
+
     @Override
     public void addCart(Product toAddToCart) {
         productInCart.add( toAddToCart );
@@ -58,6 +63,7 @@ public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
         while(true) {
             System.out.println("\nReturn to main menu? (Yes) or Enter ProductID to remove from cart (ID)");
             String choice = sc.next();
+            choice = this.formatInput.format(choice);
             if(choice.equals("Yes")) {
                 return 0;
             } else {
@@ -92,17 +98,57 @@ public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
     }
 
     @Override
+//    public double checkOut(Cart cart, double payment) {
+//        double totalPrice = cart.getCartTotal();
+//        while (true) {
+//            try {
+//                System.out.println("Enter payment amount \n"
+//                + "Total: $" + totalPrice);
+//                payment = sc.nextDouble();
+//                if (payment < totalPrice) {
+//                    throw new InsufficientPaymentException("Error: Insufficient payment, please enter a valid payment \n"
+//                    + "Total Price: $" + totalPrice);
+//                }
+//                break;
+//            } catch (InsufficientPaymentException e) {
+//                System.out.println(e.getMessage());
+//            }
+//        }
+//        System.out.println("Thank you for your purchase!");
+//        double change = payment - totalPrice;
+//        System.out.println("Your change: $" + change + "\n\n");
+//        return 0;
+//    }
+
+
     public double checkOut(Cart cart, double payment) {
         double totalPrice = cart.getCartTotal();
-        System.out.println("Enter payment amount \n :$");
-        payment = sc.nextDouble();
-        if (payment < totalPrice) {
-            System.out.println("Error: Insufficient payment");
-            return 4;
-        }else
+
+        DiscountCalculator discountCalculator = (loyaltyPoints) -> {
+            double total = cart.getCartTotal();
+            double discount = (loyaltyPoints * 0.05) * total;
+            return total - discount;
+        };
+        double finalPrice = discountCalculator.calculateDiscount( 1);
+        System.out.println("Original Price: $" + totalPrice);
+        System.out.println("Total After Discount: $" + finalPrice);
+
+        while (true) {
+            try {
+                System.out.println("Enter payment amount: \n");
+                payment = sc.nextDouble();
+                if (payment < finalPrice) {
+                    throw new InsufficientPaymentException("Error: Insufficient payment, please enter a valid payment \n"
+                            + "Total Price: $" + finalPrice);
+                }
+                break;
+            } catch (InsufficientPaymentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        double change = payment - finalPrice;
         System.out.println("Thank you for your purchase!");
-        double change = payment - totalPrice;
-        System.out.println("Your change: $" + change);
-        return change;
+        System.out.println("Your change: $" + change + "\n\n");
+        return 0;
     }
 }
