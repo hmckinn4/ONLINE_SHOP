@@ -2,7 +2,6 @@ package com.solvd.onlineshop.pages;
 
 import com.solvd.onlineshop.functionalinterfaces.FormatInput;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static com.solvd.onlineshop.pages.Page.logger;
@@ -37,8 +36,6 @@ public class HomePage {
                 else {
                     throw new Exception("Invalid input. Please enter an integer between -1 and 5.");
                 }
-            } catch (InputMismatchException e) {
-                logger.warning("Invalid input. Please enter a valid integer.");
             } catch (Exception e) {
                 logger.warning("Invalid input. Please enter an integer between -1 and 5." +
                         "\n\nMAIN MENU \n"

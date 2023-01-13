@@ -63,7 +63,7 @@ public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
         while(true) {
             System.out.println("\nReturn to main menu? (Yes) or Enter ProductID to remove from cart (ID)");
             String choice = sc.next();
-            choice = this.formatInput.format(choice);
+            choice = formatInput.format(choice);
             if(choice.equals("Yes")) {
                 return 0;
             } else {
@@ -96,29 +96,6 @@ public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
             }
         }
     }
-
-    @Override
-//    public double checkOut(Cart cart, double payment) {
-//        double totalPrice = cart.getCartTotal();
-//        while (true) {
-//            try {
-//                System.out.println("Enter payment amount \n"
-//                + "Total: $" + totalPrice);
-//                payment = sc.nextDouble();
-//                if (payment < totalPrice) {
-//                    throw new InsufficientPaymentException("Error: Insufficient payment, please enter a valid payment \n"
-//                    + "Total Price: $" + totalPrice);
-//                }
-//                break;
-//            } catch (InsufficientPaymentException e) {
-//                System.out.println(e.getMessage());
-//            }
-//        }
-//        System.out.println("Thank you for your purchase!");
-//        double change = payment - totalPrice;
-//        System.out.println("Your change: $" + change + "\n\n");
-//        return 0;
-//    }
 
 
     public double checkOut(Cart cart, double payment) {

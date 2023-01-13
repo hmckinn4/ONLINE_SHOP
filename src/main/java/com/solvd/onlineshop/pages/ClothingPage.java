@@ -1,6 +1,8 @@
 package com.solvd.onlineshop.pages;
 
 import com.solvd.onlineshop.enums.*;
+import com.solvd.onlineshop.exceptions.InvalidProductException;
+import com.solvd.onlineshop.exceptions.InvalidProductParameterException;
 import com.solvd.onlineshop.interfaces.PageDisplay;
 import com.solvd.onlineshop.models.Clothing;
 import com.solvd.onlineshop.models.Jacket;
@@ -33,6 +35,15 @@ public class ClothingPage extends Page implements PageDisplay {
         String choice = sc.next();
         choice = this.formatInput.format(choice);
 
+        try {
+            if (!choice.equals("Jackets") && !choice.equals("Shirts") && !choice.equals("Pants")) {
+                throw new InvalidProductException("Error: Invalid product choice, please enter a valid product choice. ");
+            }
+        } catch (InvalidProductException e) {
+            System.out.println(e.getMessage());
+            return 2;
+        }
+
         if (choice.equals("Jackets")) {
             System.out.print("Sizes:");
             System.out.println(Arrays.toString(Clothing.TOPSIZES));
@@ -40,7 +51,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] sizesAsString = new String[]{"Small", "Medium", "Large", "X-Large"};
 
-            String sizeChoice = chooseClothingParams(sc, sizesAsString, "sizes");
+            String sizeChoice = this.chooseProductParams(sc, sizesAsString, "sizes");
             Size size = Size.SMALL;
             if( sizeChoice.equals("S") ) {
                 size = Size.SMALL;
@@ -59,7 +70,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] colorsAsString = new String[]{"Red", "Blue", "Green"};
 
-            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            String colorChoice = this.chooseProductParams(sc, colorsAsString, "colors");
             Colors color = Colors.RED;
             if(colorChoice.equals("Red")) {
                 color = Colors.RED;
@@ -75,7 +86,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] materialsAsString = new String[]{"Cotton", "Polyester", "Leather"};
 
-            String materialChoice = chooseClothingParams(sc, materialsAsString, "material");
+            String materialChoice = this.chooseProductParams(sc, materialsAsString, "material");
             Material material = Material.COTTON;
             if( materialChoice.equals("Cotton") ) {
                 material = Material.COTTON;
@@ -91,7 +102,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] brandAsString = new String[]{"Canada-Goose", "Gucci", "Louis-Vuitton"};
 
-            String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
+            String brandChoice = this.chooseProductParams(sc, brandAsString, "brand");
             Brand brand = Brand.CANADA_GOOSE;
             if(brandChoice.equals("Canada-Goose")) {
                 brand = Brand.CANADA_GOOSE;
@@ -106,14 +117,14 @@ public class ClothingPage extends Page implements PageDisplay {
             String pocketChoice;
             String[] pocketOptions = {"Yes", "No"};
             boolean bPocketChoice;
-            pocketChoice = chooseClothingParams(sc, pocketOptions, "Pockets (Yes or No)");
+            pocketChoice = this.chooseProductParams(sc, pocketOptions, "Pockets (Yes or No)");
             bPocketChoice = convertChoiceToBool(pocketChoice);
 
             System.out.println("Do you want zip-up?:");
             String zipChoice;
             String[] zipOptions = {"Yes", "No"};
             boolean bZipperChoice;
-            zipChoice = chooseClothingParams(sc, zipOptions, "Zip-Up (Yes or No)");
+            zipChoice = this.chooseProductParams(sc, zipOptions, "Zip-Up (Yes or No)");
             bZipperChoice = convertChoiceToBool(zipChoice);
 
 
@@ -142,7 +153,7 @@ public class ClothingPage extends Page implements PageDisplay {
             System.out.println(Arrays.toString(Clothing.TOPSIZES));
             String[] sizesAsString = new String[]{"Small", "Medium", "Large", "Extra-Large"};
 
-            String sizeChoice = chooseClothingParams(sc, sizesAsString, "sizes");
+            String sizeChoice = this.chooseProductParams(sc, sizesAsString, "sizes");
             Size size = Size.SMALL;
             if( sizeChoice.equals("S") ) {
                 size = Size.SMALL;
@@ -160,7 +171,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] colorsAsString = new String[]{"Red", "Blue", "Green"};
 
-            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            String colorChoice = this.chooseProductParams(sc, colorsAsString, "colors");
             Colors color = Colors.RED;
             if(colorChoice.equals("Red")) {
                 color = Colors.RED;
@@ -175,7 +186,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] materialsAsString = new String[]{"Cotton", "Polyester", "Silk"};
 
-            String materialChoice = chooseClothingParams(sc, materialsAsString, "material");
+            String materialChoice = this.chooseProductParams(sc, materialsAsString, "material");
             Material material = Material.COTTON;
             if( materialChoice.equals("Cotton") ) {
                 material = Material.COTTON;
@@ -190,7 +201,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] brandAsString = new String[]{"Store-Brand", "Nike", "Louis-Vuitton"};
 
-            String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
+            String brandChoice = this.chooseProductParams(sc, brandAsString, "brand");
             Brand brand = Brand.NIKE;
             if(brandChoice.equals("Store-Brand")) {
                 brand = Brand.STORE_BRAND;
@@ -206,7 +217,7 @@ public class ClothingPage extends Page implements PageDisplay {
             String sleeveChoice;
             String[] sleeveOptions = {"Yes", "No"};
             boolean bSleeveChoice;
-            sleeveChoice = chooseClothingParams(sc, sleeveOptions, " sleeve choice (Yes or No)");
+            sleeveChoice = this.chooseProductParams(sc, sleeveOptions, " sleeve choice (Yes or No)");
             bSleeveChoice = convertChoiceToBool(sleeveChoice);
 
 
@@ -233,7 +244,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] sizesAsString = new String[]{"XS","S","M","L","XL","XXL"};
 
-            String waistSizeChoice = chooseClothingParams(sc, sizesAsString, "sizes");
+            String waistSizeChoice = this.chooseProductParams(sc, sizesAsString, "sizes");
             BottomWaistSize waistSize = BottomWaistSize.XS;
             if(waistSizeChoice.equals("XS")) {
                 waistSize = BottomWaistSize.XS;
@@ -263,7 +274,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] colorsAsString = new String[]{"Tan","Navy","Black"};
 
-            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            String colorChoice = this.chooseProductParams(sc, colorsAsString, "colors");
             Colors color = Colors.RED;
             if(colorChoice.equals("Tan")) {
                 color = Colors.TAN;
@@ -278,7 +289,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] brandAsString = new String[]{"Levi", "J-Crew", "Louis-Vuitton"};
 
-            String brandChoice = chooseClothingParams(sc, brandAsString, "brand");
+            String brandChoice = this.chooseProductParams(sc, brandAsString, "brand");
             Brand brand = Brand.LEVI;
             if(brandChoice.equals("Levi")) {
                 brand = Brand.LEVI;
@@ -294,7 +305,7 @@ public class ClothingPage extends Page implements PageDisplay {
             //Converting user input to enum
             String[] materialsAsString = new String[]{"Cotton", "Polyester", "Silk"};
 
-            String materialChoice = chooseClothingParams(sc, materialsAsString, "material");
+            String materialChoice = this.chooseProductParams(sc, materialsAsString, "material");
             Material material = Material.COTTON;
             if( materialChoice.equals("Cotton") ) {
                 material = Material.COTTON;
@@ -335,45 +346,25 @@ public class ClothingPage extends Page implements PageDisplay {
         }
     }
 
-
-    public String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype) {
-        boolean returnToMainMenu = false;
-        while (returnToMainMenu == false) {
-            boolean isValid = false;
-            String choice = null;
-            while (!isValid) {
-                System.out.println("\nEnter preferred parameter of " + choicetype + "\n" + "Enter Homepage to return to Main Menu");
-                choice = sc.next();
-                //makes choice case insensitive
+    @Override
+    public String chooseProductParams(Scanner sc, String[] validOptions, String parameterName) {
+        while (true) {
+            try {
+                System.out.print("\nEnter " + parameterName + " : ");
+                String choice = sc.next();
                 choice = this.formatInput.format(choice);
-                if (choice.equals("Homepage")) {
-                    // Set returnToMainMenu to true to break out of the loop
-                    returnToMainMenu = true;
-                    // Break out of the inner loop
-                    break;
-                }
-                // Check if the choice is a valid option
-                for (String param : validOptions) {
-                    if (choice.equals(param)) {
-                        isValid = true;
-                        break;
+                for (String option : validOptions) {
+                    if (choice.equals(option)) {
+                        return choice;
                     }
                 }
-                if (isValid == false) {
-                    logger.warning("Please Input Valid Entry");
-                }
-            }
-            // Return the user's choice if it is a valid option and they did not enter 0 to return to the main menu
-            if (returnToMainMenu == false) {
-                return choice;
+                throw new InvalidProductParameterException("Error: Invalid " + parameterName + ", please enter a valid " + parameterName + "\n"
+                        + "Valid " + parameterName + ": " + Arrays.toString(validOptions));
+            } catch (InvalidProductParameterException e) {
+                System.out.println(e.getMessage());
             }
         }
-        // Return null if the user entered 0 to return to the main menu
-        return null;
     }
-
-
-
 
     @Override
     public int convertChoiceToInt(String choice) {

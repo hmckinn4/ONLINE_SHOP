@@ -10,7 +10,8 @@ public enum Brand {
     NIKE("Nike"),
     STORE_BRAND("Store-Brand"),
     J_CREW("J-Crew"),
-    LEVI("Levi");
+    LEVI("Levi"),
+    VINEYAARD_VINES("Vineyard-Vines");
 
     private String brand;
 

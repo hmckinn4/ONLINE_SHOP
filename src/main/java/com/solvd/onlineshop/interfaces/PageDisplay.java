@@ -8,6 +8,6 @@ public interface PageDisplay {
 
     public boolean convertChoiceToBool(String choice) throws NullPointerException;
 
-    public String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype);
+    public String chooseProductParams(Scanner sc, String[] validOptions, String choicetype);
 
 }

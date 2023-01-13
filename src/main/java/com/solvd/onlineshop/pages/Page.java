@@ -19,7 +19,7 @@ public abstract class Page implements PageDisplay {
 
     public abstract boolean convertChoiceToBool(String choice);
 
-    public abstract String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype);
+    public abstract String chooseProductParams(Scanner sc, String[] validOptions, String choicetype);
 
     public abstract int convertChoiceToInt(String choice);
 }

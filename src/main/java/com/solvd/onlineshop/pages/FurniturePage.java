@@ -3,6 +3,7 @@ package com.solvd.onlineshop.pages;
 import com.solvd.onlineshop.enums.Brand;
 import com.solvd.onlineshop.enums.Colors;
 import com.solvd.onlineshop.enums.Material;
+import com.solvd.onlineshop.exceptions.InvalidProductParameterException;
 import com.solvd.onlineshop.models.Chair;
 import com.solvd.onlineshop.models.Couch;
 import com.solvd.onlineshop.models.Furniture;
@@ -41,7 +42,7 @@ public class FurniturePage extends Page {
             //Converting user input to enum
             String[] colorsAsString = new String[]{"Beige","Maroon","Black"};
 
-            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            String colorChoice = this.chooseProductParams(sc, colorsAsString, "colors");
             Colors color = Colors.RED;
             if(colorChoice.equals("Beige")){
                 color = Colors.BEIGE;
@@ -56,7 +57,7 @@ public class FurniturePage extends Page {
             //convert user input to enum
             String[] materialAsString = new String[]{"Metal", "Wood", "Plastic"};
 
-            String materialChoice = chooseClothingParams(sc, materialAsString, "Material");
+            String materialChoice = this.chooseProductParams(sc, materialAsString, "Material");
             Material material = Material.METAL;
             if(materialChoice.equals("Wood")){
                 material = Material.WOOD;
@@ -71,7 +72,7 @@ public class FurniturePage extends Page {
             //convert user input to enum
             String[] brandAsString = new String[]{"Walmart", "Ikea", "Restoration_Hardware"};
 
-            String brandChoice = chooseClothingParams(sc, brandAsString, "Material");
+            String brandChoice = this.chooseProductParams(sc, brandAsString, "Material");
             Brand brand = Brand.IKEA;
             if(brandChoice.equals("Restoration_Hardware")){
                 brand = Brand.RESTORATION_HARDWARE;
@@ -85,7 +86,7 @@ public class FurniturePage extends Page {
             String cupHolderChoice;
             String[] cupHolderOptions = {"Yes", "No"};
             boolean bcupHolderChoice;
-            cupHolderChoice = chooseClothingParams(sc, cupHolderOptions, " Cup holders? (Yes or No)");
+            cupHolderChoice = this.chooseProductParams(sc, cupHolderOptions, " Cup holders? (Yes or No)");
             bcupHolderChoice = convertChoiceToBool(cupHolderChoice);
 
 
@@ -111,7 +112,7 @@ public class FurniturePage extends Page {
             //Converting user input to enum
             String[] colorsAsString = new String[]{"Beige","Maroon","Black"};
 
-            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            String colorChoice = this.chooseProductParams(sc, colorsAsString, "colors");
             Colors color = Colors.RED;
             if(colorChoice.equals("Beige")){
                 color = Colors.BEIGE;
@@ -128,7 +129,7 @@ public class FurniturePage extends Page {
             //convert user input to enum
             String[] materialAsString = new String[]{"Metal", "Wood", "Plastic"};
 
-            String materialChoice = chooseClothingParams(sc, materialAsString, "Material");
+            String materialChoice = this.chooseProductParams(sc, materialAsString, "Material");
             Material material = Material.METAL;
             if(materialChoice.equals("Wood")){
                 material = Material.WOOD;
@@ -144,7 +145,7 @@ public class FurniturePage extends Page {
             //convert user input to enum
             String[] brandAsString = new String[]{"Walmart", "Ikea", "Restoration_Hardware"};
 
-            String brandChoice = chooseClothingParams(sc, brandAsString, "Material");
+            String brandChoice = this.chooseProductParams(sc, brandAsString, "Material");
             Brand brand = Brand.IKEA;
             if(brandChoice.equals("Restoration_Hardware")){
                 brand = Brand.RESTORATION_HARDWARE;
@@ -158,14 +159,14 @@ public class FurniturePage extends Page {
             String cupHolderChoice;
             String[] cupHolderOptions = {"Yes", "No"};
             boolean bcupHolderChoice;
-            cupHolderChoice = chooseClothingParams(sc, cupHolderOptions, " Cup holders? (Yes or No)");
+            cupHolderChoice = this.chooseProductParams(sc, cupHolderOptions, " Cup holders? (Yes or No)");
             bcupHolderChoice = convertChoiceToBool(cupHolderChoice);
 
             System.out.println("Do you want the recline option?:");
             String reclineChoice;
             String[] reclineOptions = {"Yes", "No"};
             boolean bReclineChoice;
-            reclineChoice = chooseClothingParams(sc, reclineOptions, " Reclines? (Yes or No)");
+            reclineChoice = this.chooseProductParams(sc, reclineOptions, " Reclines? (Yes or No)");
             bReclineChoice = convertChoiceToBool(reclineChoice);
 
 
@@ -192,7 +193,7 @@ public class FurniturePage extends Page {
             //Converting user input to enum
             String[] colorsAsString = new String[]{"Oak","White","Gray"};
 
-            String colorChoice = chooseClothingParams(sc, colorsAsString, "colors");
+            String colorChoice = this.chooseProductParams(sc, colorsAsString, "colors");
             Colors color = Colors.RED;
             if(colorChoice.equals("Oak")){
                 color = Colors.OAK;
@@ -208,7 +209,7 @@ public class FurniturePage extends Page {
             //convert user input to enum
             String[] materialAsString = new String[]{"Metal", "Wood", "Plastic"};
 
-            String materialChoice = chooseClothingParams(sc, materialAsString, "Material");
+            String materialChoice = this.chooseProductParams(sc, materialAsString, "Material");
             Material material = Material.METAL;
             if(materialChoice.equals("Wood")){
                 material = Material.WOOD;
@@ -224,7 +225,7 @@ public class FurniturePage extends Page {
             //convert user input to enum
             String[] brandAsString = new String[]{"Walmart", "Ikea", "Restoration_Hardware"};
 
-            String brandChoice = chooseClothingParams(sc, brandAsString, "Material");
+            String brandChoice = this.chooseProductParams(sc, brandAsString, "Material");
             Brand brand = Brand.IKEA;
             if(brandChoice.equals("Restoration_Hardware")){
                 brand = Brand.RESTORATION_HARDWARE;
@@ -238,7 +239,7 @@ public class FurniturePage extends Page {
             String cupHolderChoice;
             String[] cupHolderOptions = {"Yes", "No"};
             boolean bcupHolderChoice;
-            cupHolderChoice = chooseClothingParams(sc, cupHolderOptions, " Cup holders? (Yes or No)");
+            cupHolderChoice = this.chooseProductParams(sc, cupHolderOptions, " Cup holders? (Yes or No)");
             bcupHolderChoice = convertChoiceToBool(cupHolderChoice);
 
 
@@ -269,27 +270,25 @@ public class FurniturePage extends Page {
             }
         }
 
-        @Override
-        public String chooseClothingParams(Scanner sc, String[] validOptions, String choicetype) {
-            boolean isValid = false;
-            String choice = null;
-            while (!isValid) {
-                System.out.println("Enter preferred parameter of " + choicetype + ":");
-                choice = sc.next();
-                //makes choice case insensitive
+    @Override
+    public String chooseProductParams(Scanner sc, String[] validOptions, String parameterName) {
+        while (true) {
+            try {
+                System.out.print("\nEnter " + parameterName + " : ");
+                String choice = sc.next();
                 choice = this.formatInput.format(choice);
-
-                for (String param : validOptions) {
-                    if (choice.equals(param))
-                        isValid = true;
+                for (String option : validOptions) {
+                    if (choice.equals(option)) {
+                        return choice;
+                    }
                 }
-                if (isValid == false) {
-                    //throw new InvalidInputException("Please Input Valid Entry");
-                    logger.warning("Please Input Valid Entry");
-                }
+                throw new InvalidProductParameterException("Error: Invalid " + parameterName + ", please enter a valid " + parameterName + "\n"
+                        + "Valid " + parameterName + ": " + Arrays.toString(validOptions));
+            } catch (InvalidProductParameterException e) {
+                System.out.println(e.getMessage());
             }
-            return choice;
         }
+    }
 
     @Override
     public int convertChoiceToInt(String choice) {
