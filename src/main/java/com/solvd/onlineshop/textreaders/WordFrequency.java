@@ -1,13 +1,11 @@
 package com.solvd.onlineshop.textreaders;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
+
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class WordFrequency {
     public static void main(String[] args) {
@@ -15,11 +13,12 @@ public class WordFrequency {
         Map<String, Integer> wordFrequency = new HashMap<>();
 
         // Read the file
-        try (BufferedReader reader = new BufferedReader(new FileReader("FedExEarnings.txt"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
+        try {
+            String text = FileUtils.readFileToString(new File("FedExEarnings.txt"), "UTF-8");
+            String[] lines = StringUtils.split(text, System.lineSeparator());
+            for (String line : lines) {
                 // Split the line into words
-                String[] words = line.split("\\s+");
+                String[] words = StringUtils.split(line);
                 // Iterate over the words
                 for (String word : words) {
                     // Remove any punctuation from the word
