@@ -1,6 +1,8 @@
 package com.solvd.onlineshop.interfaces;
 
+import java.util.Scanner;
+
 public interface ShowCart {
-    int showCart();
+    int showCart(Scanner sc);
 }
 

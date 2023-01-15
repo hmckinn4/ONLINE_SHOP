@@ -2,6 +2,7 @@ package com.solvd.onlineshop;
 
 import com.solvd.onlineshop.exceptions.UsernameNumberException;
 import com.solvd.onlineshop.functionalinterfaces.FormatInput;
+import com.solvd.onlineshop.functionalinterfaces.ValidateInput;
 import com.solvd.onlineshop.pages.Cart;
 import com.solvd.onlineshop.pages.ClothingPage;
 import com.solvd.onlineshop.pages.FurniturePage;
@@ -20,6 +21,15 @@ public class Main{
     static HomePage homePage = new HomePage();
 
     public FormatInput formatInput = (String s) -> s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+
+   public static ValidateInput validateInput = (Scanner i) -> {
+        try {
+            Integer.parseInt(String.valueOf(i));
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    };
 
 
     public static void main(String[] args) throws UsernameNumberException {
@@ -40,19 +50,23 @@ public class Main{
                     currentPage = homePage.showPage(sc, username);
                     break;
                 case 1: // cart page
-                    currentPage = cart.showCart();
+                    currentPage = cart.showCart(sc);
                     break;
-                case 2: // Display Clothes Options
-                    // call a mthod in clothingpage that asks the user a question
-                    currentPage = clothingPage.showPage(sc);
-                    break;
+               case 2:// Display Clothes Options
+                   // call a method in clothingpage that asks the user a question
+                   currentPage = clothingPage.showPage(sc);
+                   break;
+                   // Display Clothes Options
+//                    // call a mthod in clothingpage that asks the user a question
+//                    currentPage = clothingPage.showPage(sc);
+//                    break;
                 case 3:
                     //Display Furniture Options
                     currentPage = furniturePage.showPage(sc);
                     break;
                 case 4:
                     double payment = 0;
-                    currentPage = (int) cart.checkOut(cart,payment);
+                    currentPage = (int) cart.checkOut(cart,payment, sc);
                     break;
                 case 5:
                     break;

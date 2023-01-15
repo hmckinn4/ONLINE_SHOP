@@ -1,5 +1,6 @@
 package com.solvd.onlineshop.pages;
 
+import com.solvd.onlineshop.exceptions.InvalidEntryLength;
 import com.solvd.onlineshop.functionalinterfaces.FormatInput;
 
 import java.util.Scanner;
@@ -8,12 +9,22 @@ import static com.solvd.onlineshop.pages.Page.logger;
 
 public class HomePage {
 
-    public FormatInput formatInput;
+    public FormatInput formatInput = (String s) -> s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
 
     public int showPage(Scanner sc, String username) {
+        while(true){
+        if (username.length() < 3) {
+            try {
+                throw new InvalidEntryLength("Please enter a valid username (at least 3 characters)");
+            } catch (InvalidEntryLength e) {
+                logger.warning("Please enter a valid username (at least 3 characters)");}
+            } else if(username.length() >= 3) {
+                break;
+            }
+        }
         String greeting = "Welcome "  + username + "!\n" + "\n" + "Navigate menu to begin shopping";
 //        //makes choice case insensitive
-//        this.formatInput.format(username);
+        this.formatInput.format(username);
         System.out.println(greeting);
         String options =  "\n\nMAIN MENU \n"
                 + "------------------- \n"
@@ -51,3 +62,5 @@ public class HomePage {
         return currentPage;
     }
 }
+
+

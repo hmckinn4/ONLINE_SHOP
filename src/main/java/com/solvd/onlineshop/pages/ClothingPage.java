@@ -40,7 +40,7 @@ public class ClothingPage extends Page implements PageDisplay {
                 throw new InvalidProductException("Error: Invalid product choice, please enter a valid product choice. ");
             }
         } catch (InvalidProductException e) {
-            System.out.println(e.getMessage());
+            logger.warning(e.getMessage());
             return 2;
         }
 

@@ -15,9 +15,10 @@ import java.util.Scanner;
 import static com.solvd.onlineshop.pages.Page.logger;
 
 public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
-    public ArrayList<Product> productInCart = new ArrayList<>();
-    Scanner sc = new Scanner(System.in);
-    private FormatInput formatInput;
+    private ArrayList<Product> productInCart = new ArrayList<>();
+    private FormatInput formatInput = (String s) -> s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+
+//    private FormatInput formatInput;
 
     @Override
     public void addCart(Product toAddToCart) {
@@ -49,7 +50,8 @@ public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
         return productInCart;
     }
 
-    public int showCart() {
+    @Override
+    public int showCart(Scanner sc) {
         System.out.println("\n------Cart------");
         String result = "";
         for(Product product : productInCart) {
@@ -63,7 +65,7 @@ public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
         while(true) {
             System.out.println("\nReturn to main menu? (Yes) or Enter ProductID to remove from cart (ID)");
             String choice = sc.next();
-            choice = formatInput.format(choice);
+            choice = this.formatInput.format(choice);
             if(choice.equals("Yes")) {
                 return 0;
             } else {
@@ -97,8 +99,8 @@ public class Cart implements AddtoCart, RemoveFromCart, CheckOut, ShowCart {
         }
     }
 
-
-    public double checkOut(Cart cart, double payment) {
+    @Override
+    public double checkOut(Cart cart, double payment, Scanner sc) {
         double totalPrice = cart.getCartTotal();
 
         DiscountCalculator discountCalculator = (loyaltyPoints) -> {

@@ -242,12 +242,19 @@ public class FurniturePage extends Page {
             cupHolderChoice = this.chooseProductParams(sc, cupHolderOptions, " Cup holders? (Yes or No)");
             bcupHolderChoice = convertChoiceToBool(cupHolderChoice);
 
+            System.out.println("Do you want it to be foldable?:");
+            String foldingChoice;
+            String[] foldOptions = {"Yes", "No"};
+            boolean bFoldingChoice;
+            foldingChoice = this.chooseProductParams(sc, foldOptions, " Cup holders? (Yes or No)");
+            bFoldingChoice = convertChoiceToBool(foldingChoice);
+
 
             Table table = new Table(Chair.PRICE,
                     material,
                     color,
                     brand,
-                    bcupHolderChoice);
+                    bcupHolderChoice,bFoldingChoice);
             System.out.println(table);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
