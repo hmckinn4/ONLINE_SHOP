@@ -18,14 +18,14 @@ public class ClothingPage extends Page implements PageDisplay {
     // convert from jacket
 
     //user choose something and get needed parameter from hashmap
-    private Cart cart;
+//    private Cart cart;
 
-    public ClothingPage(Cart cart) {
-        this.cart = cart;
-    }
+//    public ClothingPage(Cart cart) {
+//        this.cart = cart;
+//    }
 
     @Override
-    public int showPage(Scanner sc) {
+    public int showPage(Scanner sc, Cart cart) {
 
         System.out.println("Type name of Item to Browse: \n" +
                 "Example: Jackets" + "\n" +

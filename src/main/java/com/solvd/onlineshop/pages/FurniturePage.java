@@ -25,7 +25,7 @@ public class FurniturePage extends Page {
     }
 
     @Override
-    public int showPage(Scanner sc) {
+    public int showPage(Scanner sc, Cart cart) {
 
         System.out.println("Type name of Item to Browse: \n" +
                 "Example: Couch" + "\n" +

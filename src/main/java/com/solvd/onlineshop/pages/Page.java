@@ -15,7 +15,7 @@ public abstract class Page implements PageDisplay {
 
     public static final Logger logger = Logger.getLogger(ClothingPage.class.getName());
 
-    public abstract int showPage(Scanner sc);
+    public abstract int showPage(Scanner sc, Cart cart);
 
     public abstract boolean convertChoiceToBool(String choice);
 

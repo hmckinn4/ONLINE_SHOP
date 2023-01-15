@@ -16,7 +16,7 @@ import static com.solvd.onlineshop.pages.Page.logger;
 
 public class Main{
     static Cart cart = new Cart();
-    static ClothingPage clothingPage = new ClothingPage(cart);
+    static ClothingPage clothingPage = new ClothingPage();
     static FurniturePage furniturePage = new FurniturePage(cart);
     static HomePage homePage = new HomePage();
 
@@ -54,7 +54,7 @@ public class Main{
                     break;
                case 2:// Display Clothes Options
                    // call a method in clothingpage that asks the user a question
-                   currentPage = clothingPage.showPage(sc);
+                   currentPage = clothingPage.showPage(sc, cart);
                    break;
                    // Display Clothes Options
 //                    // call a mthod in clothingpage that asks the user a question
@@ -62,7 +62,7 @@ public class Main{
 //                    break;
                 case 3:
                     //Display Furniture Options
-                    currentPage = furniturePage.showPage(sc);
+                    currentPage = furniturePage.showPage(sc, cart);
                     break;
                 case 4:
                     double payment = 0;
