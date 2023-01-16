@@ -52,6 +52,11 @@ public class ClothingPage extends Page implements PageDisplay {
             String[] sizesAsString = new String[]{"Small", "Medium", "Large", "X-Large"};
 
             String sizeChoice = this.chooseProductParams(sc, sizesAsString, "sizes");
+//            for(Size size : Size.values()) {
+//                if(sizeChoice.equals(size.toString())) {
+//                    sizeChoice = size.toString();
+//                }
+//            }
             Size size = Size.SMALL;
             if( sizeChoice.equals("S") ) {
                 size = Size.SMALL;

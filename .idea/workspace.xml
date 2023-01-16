@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d04894a-9a58-4dfa-9362-851e5da570bd" name="Changes" comment="More Additions&#10;&#10;Remove from cart&#10;Check out&#10;Interfaces^^">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/functionalinterfaces/Foldable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/interfaces/PageDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/interfaces/PageDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Jacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Jacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/models/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/Cart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/ClothingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/ClothingPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/FurniturePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/FurniturePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/onlineshop/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/models/Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/ClothingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/ClothingPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/FurniturePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/FurniturePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solvd/onlineshop/pages/HomePage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

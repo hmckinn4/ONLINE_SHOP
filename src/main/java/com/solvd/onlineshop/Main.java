@@ -20,6 +20,7 @@ public class Main{
     static FurniturePage furniturePage = new FurniturePage(cart);
     static HomePage homePage = new HomePage();
 
+
     public FormatInput formatInput = (String s) -> s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
 
    public static ValidateInput validateInput = (Scanner i) -> {

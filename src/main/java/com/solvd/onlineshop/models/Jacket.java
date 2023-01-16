@@ -2,8 +2,8 @@ package com.solvd.onlineshop.models;
 
 import com.solvd.onlineshop.enums.Brand;
 import com.solvd.onlineshop.enums.Material;
-import com.solvd.onlineshop.enums.Size;
 import com.solvd.onlineshop.enums.Colors;
+import com.solvd.onlineshop.enums.Size;
 
 public class Jacket extends Clothing {
 

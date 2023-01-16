@@ -4,6 +4,7 @@ import com.solvd.onlineshop.enums.Brand;
 import com.solvd.onlineshop.enums.Colors;
 import com.solvd.onlineshop.enums.Material;
 import com.solvd.onlineshop.exceptions.InvalidProductParameterException;
+import com.solvd.onlineshop.functionalinterfaces.Foldable;
 import com.solvd.onlineshop.models.Chair;
 import com.solvd.onlineshop.models.Couch;
 import com.solvd.onlineshop.models.Furniture;
@@ -250,11 +251,13 @@ public class FurniturePage extends Page {
             bFoldingChoice = convertChoiceToBool(foldingChoice);
 
 
+            Foldable foldable = () -> bFoldingChoice;
             Table table = new Table(Chair.PRICE,
                     material,
                     color,
                     brand,
-                    bcupHolderChoice,bFoldingChoice);
+                    bcupHolderChoice,
+                    foldable);
             System.out.println(table);
             System.out.println("\nDo you want to add to cart (Yes)? Else, hit any key for home-page:");
             String addToCartChoice = sc.next();
