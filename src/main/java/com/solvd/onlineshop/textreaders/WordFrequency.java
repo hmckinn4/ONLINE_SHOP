@@ -14,7 +14,7 @@ public class WordFrequency {
 
         // Read the file
         try {
-            String text = FileUtils.readFileToString(new File("FedExEarnings.txt"), "UTF-8");
+            String text = FileUtils.readFileToString(new File("src/main/FedExEarnings.txt"), "UTF-8");
             String[] lines = StringUtils.split(text, System.lineSeparator());
             for (String line : lines) {
                 // Split the line into words
@@ -39,9 +39,17 @@ public class WordFrequency {
         // Sort the entries by frequency in descending order
         Collections.sort(entries, (a, b) -> b.getValue() - a.getValue());
 
+        //create a string buffer to store the result
+        StringBuffer sb = new StringBuffer();
         // Print the word frequencies
         for (Map.Entry<String, Integer> entry : entries) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+            sb.append(entry.getKey() + " - " + entry.getValue() + "\n");
+        }
+        //write the string buffer to a text file
+        try {
+            FileUtils.writeStringToFile(new File("wordFrequency.txt"), sb.toString(), "UTF-8");
+        } catch (IOException e) {
+            System.out.println("Error writing to file: " + e.getMessage());
         }
     }
 }

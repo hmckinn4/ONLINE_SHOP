@@ -7,18 +7,25 @@ import com.solvd.onlineshop.pages.Cart;
 import com.solvd.onlineshop.pages.ClothingPage;
 import com.solvd.onlineshop.pages.FurniturePage;
 import com.solvd.onlineshop.pages.HomePage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.solvd.onlineshop.pages.Page.logger;
+
+
+
+//import static com.solvd.onlineshop.pages.Page.logger;
 
 public class Main{
     static Cart cart = new Cart();
     static ClothingPage clothingPage = new ClothingPage();
     static FurniturePage furniturePage = new FurniturePage(cart);
     static HomePage homePage = new HomePage();
+
+    private static final Logger logger = LogManager.getLogger(Main.class);
 
 
     public FormatInput formatInput = (String s) -> s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
@@ -36,8 +43,6 @@ public class Main{
     public static void main(String[] args) throws UsernameNumberException {
         Scanner sc = new Scanner(System.in);
         //ask user for name
-
-//        System.out.println("Enter customer name to continue:\n");
         String username = enterUsername(sc);
         String.format(username);
         //makes choice case insensitive
@@ -57,10 +62,6 @@ public class Main{
                    // call a method in clothingpage that asks the user a question
                    currentPage = clothingPage.showPage(sc, cart);
                    break;
-                   // Display Clothes Options
-//                    // call a mthod in clothingpage that asks the user a question
-//                    currentPage = clothingPage.showPage(sc);
-//                    break;
                 case 3:
                     //Display Furniture Options
                     currentPage = furniturePage.showPage(sc, cart);
@@ -72,7 +73,7 @@ public class Main{
                 case 5:
                     break;
                 default:
-                    logger.warning("Invalid selection. Returning to main menu.");
+                    logger.warn("Invalid selection. Returning to main menu.");
                     currentPage = 0;
                     break;
             }
@@ -84,7 +85,7 @@ public class Main{
         boolean status = true;
         while(status) {
             try {
-                System.out.print("Enter customer name: ");
+                logger.trace("\nEnter customer name: ");
                 username = sc.nextLine();
 //                username = this.formatInput.format(username);
 
@@ -100,10 +101,11 @@ public class Main{
 
                 status = false;
             } catch (UsernameNumberException e) {
-                System.out.println(e.getMessage());
+                logger.debug(e.getMessage());
             }
 
         }
         return username;
     }
+
 }
